@@ -9,13 +9,58 @@
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/custom.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+        .header-bg {
+            background-color: #007bff;
+            color: white;
+            padding: 20px 0;
+        }
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border: 5px solid white;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        }
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+        .timeline-item {
+            padding: 20px 30px;
+            border-left: 2px solid #007bff;
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .timeline-badge {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-size: 1.2em;
+            position: absolute;
+            left: -20px;
+            top: 20px;
+        }
+        .card {
+            transition: transform 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
 </head>
 <body>
+    <!-- Navigation bar remains unchanged -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Gideon K. Ngetich</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand" href="index.html">My Website</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -34,7 +79,7 @@
         </div>
     </nav>
 
-    <header class="bg-primary text-white text-center py-5">
+    <header class="header-bg text-center">
         <div class="container">
             <h1 class="display-4">About Me</h1>
             <p class="lead">IT Professional | Web Developer | Network Security Enthusiast</p>
@@ -42,11 +87,11 @@
     </header>
 
     <main class="container my-5">
-        <section class="row mb-5">
-            <div class="col-md-4">
-                <img src="Gideon Ngetich.png" alt="Your Name" class="img-fluid rounded-circle mb-3">
-                <h2 class="text-center">Gideon K. Ngetich</h2>
-                <p class="text-center">Network & Cloud Engineer</p>
+        <section class="row mb-5 align-items-center">
+            <div class="col-md-4 text-center mb-4 mb-md-0">
+                <img src="Gideon Ngetich.png" alt="Gideon K. Ngetich" class="img-fluid rounded-circle profile-img mb-3">
+                <h2>Gideon K. Ngetich</h2>
+                <p>Network & Cloud Engineer</p>
                 <div class="d-flex justify-content-center">
                     <a href="#" class="text-dark me-3"><i class="fab fa-linkedin fa-2x"></i></a>
                     <a href="#" class="text-dark me-3"><i class="fab fa-github fa-2x"></i></a>
@@ -54,23 +99,21 @@
                 </div>
             </div>
             <div class="col-md-8">
-                <h3>My Story</h3>
-                <p>I'm Gideon, an IT professional with a passion for web development and network. My journey in the tech world began when I joined Zetech University to pursue a Bachelor of Science in Information Technology. There, I fully immersed myself in the world of computers, spending countless hours in our computer labs and library. Since then, I've been on an exciting path of continuous learning and growth in the ever-evolving field of information technology.</p>
+                <h3 class="mb-4">My Story</h3>
+                <p>I'm Gideon, an IT professional with a passion for web development and network security. My journey in the tech world began when I joined Zetech University to pursue a Bachelor of Science in Information Technology. There, I fully immersed myself in the world of computers, spending countless hours in our computer labs and library. Since then, I've been on an exciting path of continuous learning and growth in the ever-evolving field of information technology.</p>
 
-                    <p>With 4 years of experience in the industry, I've had the opportunity to work on a variety of projects, from developing user-friendly web applications to implementing robust network solutions. I thrive on challenges and am always eager to expand my skill set to stay at the forefront of technological advancements.</p>
-                    
-                    
-                <h3 class="mt-4">My Expertise</h3>
-                <ul>
-                    <li>Web Development (HTML, CSS, JavaScript, Python)</li>
-                    <li>Network Management and Security</li>
-                    <li>Information Security and Risk Management</li>
-                    <li>Database Management</li>
-                    <li>Cloud Computing (AWS, Azure)</li>
+                <p>With 4 years of experience in the industry, I've had the opportunity to work on a variety of projects, from developing user-friendly web applications to implementing robust network solutions. I thrive on challenges and am always eager to expand my skill set to stay at the forefront of technological advancements.</p>
+                
+                <h3 class="mt-5 mb-4">My Expertise</h3>
+                <ul class="list-unstyled">
+                    <li><i class="fas fa-check-circle text-primary me-2"></i> Web Development (HTML, CSS, JavaScript, Python)</li>
+                    <li><i class="fas fa-check-circle text-primary me-2"></i> Network Management and Security</li>
+                    <li><i class="fas fa-check-circle text-primary me-2"></i> Information Security and Risk Management</li>
+                    <li><i class="fas fa-check-circle text-primary me-2"></i> Database Management</li>
+                    <li><i class="fas fa-check-circle text-primary me-2"></i> Cloud Computing (AWS, Azure)</li>
                 </ul>
             </div>
         </section>
-
         <section class="mb-5">
             <h3 class="text-center mb-4">Professional Timeline</h3>
             <div class="timeline">
@@ -112,13 +155,57 @@
                 </div>
             </div>
         </section>
-        
 
-        <section>
+        <section class="mb-5">
+            <h3 class="text-center mb-4">Education</h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-badge bg-primary"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4 class="timeline-title">Bachelor of Science in Information Technology</h4>
+                            <p><small class="text-muted"><i class="fas fa-clock"></i> 2016-2020</small></p>
+                        </div>
+                        <div class="timeline-body">
+                            <p>Enrolled for a Bachelor of Science in Information Technology (BSc.IT), a four-year course at Zetech University.</p>
+                            <p><i>Ruiru, KE</i></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-badge bg-primary"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4 class="timeline-title">Kenya Certificate of Secondary Education (KCSE)</h4>
+                            <p><small class="text-muted"><i class="fas fa-clock"></i> 2012-2015</small></p>
+                        </div>
+                        <div class="timeline-body">
+                            <p>Certificate of Secondary Education (KCSE) from Kapkatet Secondary School.</p>
+                            <p><i>Kericho, KE</i></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-badge bg-primary"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="timeline-panel">
+                        <div class="timeline-heading">
+                            <h4 class="timeline-title">Kenya Certificate of Primary Education (KCPE)</h4>
+                            <p><small class="text-muted"><i class="fas fa-clock"></i> 2011</small></p>
+                        </div>
+                        <div class="timeline-body">
+                            <p>Completed my Certificate of Primary Education (KCPE) from Chebitet Primary School.</p>
+                            <p><i>Kericho, KE</i></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <section class="mb-5">
             <h3 class="text-center mb-4">Certifications</h3>
             <div class="row">
                 <div class="col-md-4 mb-3">
-                    <div class="card">
+                    <div class="card h-100">
                         <div class="card-body">
                             <h5 class="card-title">CISCO Network CCNA</h5>
                             <p class="card-text">Certified in network technologies, installation and configuration, media and topologies, management, and security.</p>
@@ -126,7 +213,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 mb-3">
-                    <div class="card">
+                    <div class="card h-100">
                         <div class="card-body">
                             <h5 class="card-title">Certified Information Systems Security Professional (CISSP)</h5>
                             <p class="card-text">Expertise in information security, covering critical areas such as security and risk management, asset security, and security operations.</p>
@@ -134,7 +221,7 @@
                     </div>
                 </div>
                 <div class="col-md-4 mb-3">
-                    <div class="card">
+                    <div class="card h-100">
                         <div class="card-body">
                             <h5 class="card-title">AWS Certified Solutions Architect</h5>
                             <p class="card-text">Proficiency in designing distributed systems on Amazon Web Services.</p>
@@ -143,89 +230,14 @@
                 </div>
             </div>
         </section>
-        <section class="mb-5 row">
-            <h3 class="text-center mb-4">Education Background</h3>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-badge bg-primary col-md-4">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <div class="timeline-panel ">
-                        <div class="timeline-heading">
-                            <div class="col-md-4 mb-3">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="timeline-heading">
-                                            <h4 class="timeline-title">Bachelor of Science in Information Technology</h4>
-                                            <p><small class="text-muted"><i class="fas fa-clock"></i> 2016-2020</small></p>
-                                        </div>
-                                        <div class="timeline-body">
-                                            <p>Enrolled for a Bachelor of Science in Information Technology(BSc.IT),a four year course</p>
-                                            <p>Zetech University.</p>
-                                            <p><i>Ruiru KE</i></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div> 
-                <div class="timeline-item">
-                    <div class="timeline-badge bg-primary col-md-4">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <div class="timeline-panel ">
-                        <div class="timeline-heading">
-                            <div class="col-md-4 mb-3">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="timeline-heading">
-                                            <h4 class="timeline-title">Kenya Certificate of Secondary Education,KCSE</h4>
-                                            <p><small class="text-muted"><i class="fas fa-clock"></i> 2012-2015</small></p>
-                                        </div>
-                                        <div class="timeline-body">
-                                            <p>Certificate of Secondary Education (KCSE) Kapkatet Secondary School.</p>
-                                            <p><i>Kericho KE</i></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>                
-                <div class="timeline-item">
-                    <div class="timeline-badge bg-primary col-md-4">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <div class="timeline-panel">
-                        <div class="timeline-heading">
-                            <div class="col-md-4 mb-3">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="timeline-heading">
-                                            <h4 class="timeline-title">Kenya Certificate of Primary Education,KCPE</h4>
-                                            <p><small class="text-muted"><i class="fas fa-clock"></i> 2011</small></p>
-                                        </div>
-                                        <div class="timeline-body">
-                                            <p>Completed my Certificate of Primary Education (KCPE) from Chebitet Primary School.</p>
-                                            <p><p><i>Kericho KE</i></p></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>  
-            </div>
-    </section>
     </main>
 
-    <footer class="bg-dark text-white text-center py-3">
-        <p class="mb-0">&copy; 2024 Gideon K. Ngetich. All rights reserved.</p>
-        <div class="mt-2">
-            <a href="#" class="text-white me-3"><i class="fab fa-linkedin"></i></a>
-            <a href="#" class="text-white me-3"><i class="fab fa-github"></i></a>
-            <a href="https://x.com/Gideon_K_N" class="text-white me-3"><i class="fab fa-twitter fa-2x"></i></a>
+    <footer class="bg-dark text-white text-center py-4">
+        <p class="mb-2">&copy; 2024 Gideon K. Ngetich. All rights reserved.</p>
+        <div>
+            <a href="#" class="text-white me-3"><i class="fab fa-linkedin fa-lg"></i></a>
+            <a href="#" class="text-white me-3"><i class="fab fa-github fa-lg"></i></a>
+            <a href="https://x.com/Gideon_K_N" class="text-white"><i class="fab fa-twitter fa-lg"></i></a>
         </div>
     </footer>
 

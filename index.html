@@ -1,21 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gideon K. Ngetich</title>
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome for social icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('Gideon.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 40px 0;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #007bff;
+        }
+
+        .skill-bar {
+            height: 10px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .skill-level {
+            height: 100%;
+            background-color: #007bff;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 2px;
+            background-color: #007bff;
+        }
+
+        .timeline-item {
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .timeline-badge {
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            position: absolute;
+            top: 16px;
+            left: 50%;
+            margin-left: -25px;
+            background-color: #007bff;
+            border-radius: 50%;
+            color: white;
+        }
+
+        .timeline-panel {
+            width: 45%;
+            float: left;
+            padding: 20px;
+            position: relative;
+            border: 1px solid #d4d4d4;
+            border-radius: 8px;
+            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);
+        }
+
+        .timeline-item:nth-child(even) .timeline-panel {
+            float: right;
+        }
+
+        .timeline-item::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        .sidebar {
+            background-color: #f8f9fa;
+            border-right: 1px solid #dee2e6;
+        }
+
+        .sidebar .nav-link.active {
+            background-color: #007bff;
+            color: white;
+            border-radius: 0.375rem;
+        }
+
+        .sidebar .nav-link {
+            color: #007bff;
+        }
+
+        .sidebar .nav-link:hover {
+            background-color: #e9ecef;
+            color: #007bff;
+        }
+
+        .main-content {
+            padding-top: 40px;
+        }
+
+        .card {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+    </style>
 </head>
+
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Gideon Kipngeno Ngetich</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand" href="index.html">My Website</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
@@ -34,15 +156,15 @@
         </div>
     </nav>
 
-    <header class="bg-primary text-white text-center py-5">
+    <header class="hero-section text-center">
         <div class="container">
-            <h1 class="display-4">Welcome to My Website</h1>
-            <p class="lead">A showcase of my skills, projects, and experiences in IT and web development</p>
-            <div class="mt-4">
-                <a href="https://www.facebook.com/gideonkipngeno95" class="text-white me-3"><i class="fab fa-facebook-f fa-2x"></i></a>
-                <a href="https://x.com/Gideon_K_N" class="text-white me-3"><i class="fab fa-twitter fa-2x"></i></a>
-                <a href="#" class="text-white me-3"><i class="fab fa-linkedin-in fa-2x"></i></a>
-                <a href="#" class="text-white"><i class="fab fa-github fa-2x"></i></a>
+            <h1 class="display-4">Welcome to My World</h1>
+            <p class="lead">IT Professional | Web Developer | Network Security Enthusiast</p>
+            <div class="social-icons mt-4">
+                <a href="https://www.facebook.com/gideonkipngeno95"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://x.com/Gideon_K_N"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
             </div>
         </div>
     </header>
@@ -53,98 +175,422 @@
         </div>
     </div>
 
-    <main class="container my-5">
-        <section class="row mb-5">
-            <div class="col-md-6">
-                <h2>About Me</h2>
-                <p>I'm Gideon, an IT professional with a passion for web development and network. My journey in the tech world began when I joined Zetech University to pursue a Bachelor of Science in Information Technology. There, I fully immersed myself in the world of computers, spending countless hours in our computer labs and library. Since then, I've been on an exciting path of continuous learning and growth in the ever-evolving field of information technology.</p>
-                <a href="about.html" class="btn btn-primary">Learn More</a>
-            </div>
-            <div class="col-md-5">
-                <img src="Gideon Ngetich.png" alt="Profile Image" class="img-fluid rounded">
-            </div>
-        </section>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar -->
+            <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block sidebar collapse">
+                <div class="position-sticky pt-3">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#about">
+                                About Me
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#skills">
+                                Skills
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#portfolio">
+                                Portfolio
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#experience">
+                                Experience
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#services">
+                                Services
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#articles">
+                                Latest Articles
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#awards">
+                                Awards
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#technologies">
+                                Technologies
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
 
-        <section class="mb-5">
-            <h2 class="text-center mb-4">My Skills</h2>
-            <div class="row">
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Python Programming</h5>
-                            <p class="card-text">Experienced in developing scripts and applications using Python.</p>
-                        </div>
+            <!-- Main content -->
+            <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 main-content">
+                <section id="about" class="row mb-5 align-items-center">
+                    <div class="col-md-6">
+                        <h2 class="mb-4">About Me</h2>
+                        <p>I'm Gideon, an IT professional with a passion for web development and network security. My
+                            journey in the tech world began at Zetech University, where I pursued a Bachelor of Science
+                            in Information Technology. Since then, I've been on an exciting path of continuous learning
+                            and growth in the ever-evolving field of information technology.</p>
+                        <a href="about.html" class="btn btn-primary">Learn More</a>
                     </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Network Management</h5>
-                            <p class="card-text">Proficient in configuring and managing network infrastructure.</p>
-                        </div>
+                    <div class="col-md-6">
+                        <img src="Gideon Ngetich.png" alt="Profile Image" class="img-fluid rounded shadow">
                     </div>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Information Security</h5>
-                            <p class="card-text">Knowledgeable in implementing and maintaining security protocols.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+                </section>
 
-        <section class="mb-5">
-            <h2 class="text-center mb-4">Latest Projects</h2>
-            <div class="row">
-                <div class="col-md-6 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Network Monitoring Tool</h5>
-                            <p class="card-text">A user-friendly application for monitoring home network devices and security.</p>
-                            <a href="#" class="btn btn-outline-primary">View Project</a>
+                <section id="skills" class="mb-5">
+                    <h2 class="text-center mb-4">My Skills</h2>
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <h3>Technical Skills</h3>
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between">
+                                    <span>HTML</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 90%;"></div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between">
+                                    <span>CSS</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 85%;"></div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between">
+                                    <span>JavaScript</span>
+                                    <span>75%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 75%;"></div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between">
+                                    <span>Python</span>
+                                    <span>80%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 80%;"></div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between">
+                                    <span>Network Security</span>
+                                    <span>70%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 70%;"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <h3>Soft Skills</h3>
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between">
+                                    <span>Problem Solving</span>
+                                    <span>95%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 95%;"></div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between">
+                                    <span>Communication</span>
+                                    <span>85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 85%;"></div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between">
+                                    <span>Teamwork</span>
+                                    <span>90%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 90%;"></div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <div class="d-flex justify-content-between">
+                                    <span>Adaptability</span>
+                                    <span>80%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-level" style="width: 80%;"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-6 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Personal Website</h5>
-                            <p class="card-text">This responsive website built using HTML, CSS, and Bootstrap.</p>
-                            <a href="#" class="btn btn-outline-primary">View Project</a>
+                </section>
+
+                <section id="portfolio" class="mb-5">
+                    <h2 class="text-center mb-4">Portfolio</h2>
+                    <div class="row">
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img src="project1.jpg" class="card-img-top" alt="Project 1">
+                                <div class="card-body">
+                                    <h5 class="card-title">Project Title 1</h5>
+                                    <p class="card-text">A brief description of the project goes here. Highlight the
+                                        technologies used and the goals achieved.</p>
+                                    <a href="#" class="btn btn-primary">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img src="project2.jpg" class="card-img-top" alt="Project 2">
+                                <div class="card-body">
+                                    <h5 class="card-title">Project Title 2</h5>
+                                    <p class="card-text">A brief description of the project goes here. Highlight the
+                                        technologies used and the goals achieved.</p>
+                                    <a href="#" class="btn btn-primary">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img src="project3.jpg" class="card-img-top" alt="Project 3">
+                                <div class="card-body">
+                                    <h5 class="card-title">Project Title 3</h5>
+                                    <p class="card-text">A brief description of the project goes here. Highlight the
+                                        technologies used and the goals achieved.</p>
+                                    <a href="#" class="btn btn-primary">View Details</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
+                </section>
 
-        <section>
-            <h2 class="text-center mb-4">Get in Touch</h2>
-            <p class="text-center">Interested in collaborating or have a question? Don't hesitate to reach out!</p>
-            <div class="text-center">
-                <a href="contact.html" class="btn btn-primary">Contact Me</a>
-            </div>
-        </section>
-    </main>
+                <section id="experience" class="mb-5">
+                    <h2 class="text-center mb-4">Experience</h2>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-badge">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <div class="timeline-panel">
+                                <h4>Job Title 1</h4>
+                                <p class="text-muted">Company Name | Year - Year</p>
+                                <p>Details about your job responsibilities and achievements go here. Focus on key
+                                    contributions and skills developed.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-badge">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <div class="timeline-panel">
+                                <h4>Job Title 2</h4>
+                                <p class="text-muted">Company Name | Year - Year</p>
+                                <p>Details about your job responsibilities and achievements go here. Focus on key
+                                    contributions and skills developed.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
-    <footer class="bg-dark text-white text-center py-3">
-        <p class="mb-0">&copy; 2024 Gideon K. Ngetich. All rights reserved.</p>
-        <div class="mt-2">
-            <a href="https://www.facebook.com/gideonkipngeno95" class="text-white me-3"><i class="fab fa-facebook-f fa-2x"></i></a>
-            <a href="https://x.com/Gideon_K_N" class="text-white me-3"><i class="fab fa-twitter fa-2x"></i></a>
-            <a href="#" class="text-white me-3"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#" class="text-white"><i class="fab fa-github"></i></a>
+                <section id="services" class="mb-5">
+                    <h2 class="text-center mb-4">Services</h2>
+                    <div class="row">
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-code fa-3x mb-4"></i>
+                                    <h5 class="card-title">Web Development</h5>
+                                    <p class="card-text">Building responsive and efficient websites tailored to your
+                                        needs.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-network-wired fa-3x mb-4"></i>
+                                    <h5 class="card-title">Network Security</h5>
+                                    <p class="card-text">Ensuring the security and integrity of your network systems.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <i class="fas fa-cogs fa-3x mb-4"></i>
+                                    <h5 class="card-title">IT Consulting</h5>
+                                    <p class="card-text">Providing expert advice to optimize your IT infrastructure.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="articles" class="mb-5">
+                    <h2 class="text-center mb-4">Latest Articles</h2>
+                    <div class="row">
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img src="article1.jpg" class="card-img-top" alt="Article 1">
+                                <div class="card-body">
+                                    <h5 class="card-title">Article Title 1</h5>
+                                    <p class="card-text">A brief description or excerpt from the article.</p>
+                                    <a href="#" class="btn btn-primary">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img src="article2.jpg" class="card-img-top" alt="Article 2">
+                                <div class="card-body">
+                                    <h5 class="card-title">Article Title 2</h5>
+                                    <p class="card-text">A brief description or excerpt from the article.</p>
+                                    <a href="#" class="btn btn-primary">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="card">
+                                <img src="article3.jpg" class="card-img-top" alt="Article 3">
+                                <div class="card-body">
+                                    <h5 class="card-title">Article Title 3</h5>
+                                    <p class="card-text">A brief description or excerpt from the article.</p>
+                                    <a href="#" class="btn btn-primary">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                 <!-- Awards & Recognitions -->
+                 <section class="mb-5">
+                    <h3 class="text-center mb-4">Awards & Recognitions</h3>
+                    <div class="row justify-content-center">
+                    <div class="col-md-4 mb-3 text-center">
+                        <i class="fas fa-award fa-3x mb-3 text-primary"></i>
+                        <h5>Best IT Support Technician 2023</h5>
+                        <p>Awarded by Tech Association</p>
+                    </div>
+                    <div class="col-md-4 mb-3 text-center">
+                        <i class="fas fa-trophy fa-3x mb-3 text-primary"></i>
+                        <h5>Top Web Developer 2022</h5>
+                        <p>Recognized by WebDev Magazine</p>
+                    </div>
+                    </div>
+                </section>
+                <!-- Testimonials (auto-hidden) -->
+                <section id="testimonials" class="mb-5">
+                    <h3 class="text-center mb-4">What People Say</h3>
+                    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                        <blockquote class="blockquote text-center">
+                            <p class="mb-0">"Gideon is a highly skilled and reliable IT professional."</p>
+                            <footer class="blockquote-footer mt-2">John Doe, CEO at Tech Co.</footer>
+                        </blockquote>
+                        </div>
+                        <div class="carousel-item">
+                        <blockquote class="blockquote text-center">
+                            <p class="mb-0">"His expertise in network security is unparalleled."</p>
+                            <footer class="blockquote-footer mt-2">Jane Smith, CTO at SecureNet</footer>
+                        </blockquote>
+                        </div>
+                        <div class="carousel-item">
+                        <blockquote class="blockquote text-center">
+                            <p class="mb-0">"Gideon's web development skills brought our vision to life."</p>
+                            <footer class="blockquote-footer mt-2">Mike Johnson, Founder of StartUp Inc.</footer>
+                        </blockquote>
+                        </div>
+                    </div>
+                    </div>
+                </section>
+            
+                <!-- Technologies -->
+                <section class="mb-5">
+                    <h3 class="text-center mb-4">Technologies I Work With</h3>
+                    <div class="row justify-content-center text-center">
+                    <div class="col-4 col-md-2 mb-3">
+                        <img src="path/to/html-icon.png" alt="HTML5" class="img-fluid mb-2" style="max-height: 50px;">
+                        <p>HTML5</p>
+                    </div>
+                    <div class="col-4 col-md-2 mb-3">
+                        <img src="path/to/css-icon.png" alt="CSS3" class="img-fluid mb-2" style="max-height: 50px;">
+                        <p>CSS3</p>
+                    </div>
+                    <div class="col-4 col-md-2 mb-3">
+                        <img src="path/to/js-icon.png" alt="JavaScript" class="img-fluid mb-2" style="max-height: 50px;">
+                        <p>JavaScript</p>
+                    </div>
+                    <div class="col-4 col-md-2 mb-3">
+                        <img src="path/to/python-icon.png" alt="Python" class="img-fluid mb-2" style="max-height: 50px;">
+                        <p>Python</p>
+                    </div>
+                    <div class="col-4 col-md-2 mb-3">
+                        <img src="path/to/aws-icon.png" alt="AWS" class="img-fluid mb-2" style="max-height: 50px;">
+                        <p>AWS</p>
+                    </div>
+                    </div>
+                </section>
+                <section>
+
+            <!-- Call-to-Action -->
+                <section id="cta" class="text-center mb-5">
+                        <a href="contact.html" class="btn btn-primary btn-lg">Get in Touch</a>
+                </section>
+
+            </div>
+        </main>
+        <!-- Mission Statement -->
+        <sectiion>
+            <div class="text-center mb-5">
+                <h3 class="mb-4">My Mission</h3>
+                <p class="lead">"To leverage technology in solving complex problems and driving innovation in the IT industry."</p>
+            </div>            
+        </section>  
+      </main>
+    </div>
+  </div>
+
+    <footer class="bg-dark text-white text-center py-4">
+        <div class="container">
+            <p>&copy; 2024 Gideon K. Ngetich. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Custom JS -->
     <script>
-        // Display current date
+        const date = new Date();
         const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-        document.getElementById('currentDate').textContent = new Date().toLocaleDateString('en-US', options);
+        const currentDate = date.toLocaleDateString(undefined, options);
+        document.getElementById('currentDate').textContent = currentDate;
+         // Auto-rotate testimonials
+    var testimonialCarousel = new bootstrap.Carousel(document.getElementById('testimonialCarousel'), {
+      interval: 5000,
+      wrap: true
+    });
+  
+    // Smooth scrolling for sidebar links
+    document.querySelectorAll('#sidebar .nav-link').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        let targetId = this.getAttribute('href');
+        document.querySelector(targetId).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
     </script>
+
 </body>
+
 </html>
