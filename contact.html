@@ -15,7 +15,27 @@
             background-color: #f8f9fa;
         }
         .navbar {
-            box-shadow: 0 2px 4px rgba(0,0,0,.1);
+            background-color: rgba(33, 37, 41, 0.9);
+            backdrop-filter: blur(10px);
+        }
+        .navbar-nav .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-nav .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #ffd700;
+            transition: width 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover::after {
+            width: 100%;
         }
         .header-bg {
             background: linear-gradient(to right, #007bff, #0056b3);
