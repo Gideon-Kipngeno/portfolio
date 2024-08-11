@@ -17,11 +17,30 @@
             background-color: rgba(33, 37, 41, 0.9);
             backdrop-filter: blur(10px);
         }
+        .navbar-nav .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-nav .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: #ffd700;
+            transition: width 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover::after {
+            width: 100%;
+        }
         .header-bg {
-            background: linear-gradient(135deg, #007bff, #0056b3);
+            background: #05395a;
             color: white;
             padding: 60px 0;
-            clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%);
+            /* background: linear-gradient(135deg, #05395a, #1c7ba0); */
         }
         .profile-img {
             width: 200px;
@@ -88,7 +107,7 @@
 </head>
 <body>
     <!-- Navigation bar remains unchanged -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-blue bg-info sticky-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">Gideon's Digital Resume</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -98,10 +117,16 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link " href="index.html">Home</a>
+                        <a class="nav-link" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link active" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="project.html">Project</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contact</a>
@@ -140,6 +165,13 @@
                         <h3 class="section-title">My Story</h3>
                         <p>I'm Gideon, an IT professional with a passion for web development and network security. My journey in the tech world began at Zetech University, where I pursued a Bachelor of Science in Information Technology. Since then, I've been on an exciting path of continuous learning and growth in the ever-evolving field of information technology.</p>
                         <p>With 4 years of experience in the industry, I've had the opportunity to work on a variety of projects, from developing user-friendly web applications to implementing robust network solutions. I thrive on challenges and am always eager to expand my skill set to stay at the forefront of technological advancements.</p>
+                        <h3>Personal Journey</h3>
+                        <p>My fascination with technology started at a young age when I got my hands on my first computer. Growing up in Kericho, Kenya, I was captivated by the potential of technology to connect people and solve complex problems. This early interest blossomed into a lifelong passion, driving me to pursue a career in IT.</p>
+                        <p>Throughout my journey, I've been motivated by the belief that technology can be a powerful force for positive change. Whether it's securing networks to protect sensitive information or developing web applications that streamline processes, I find immense satisfaction in creating solutions that make a tangible difference in people's lives.</p>
+                        <p>My diverse background, speaking English, Swahili, and Kipsigis, has given me a unique perspective on the importance of clear communication in the tech world. It's reinforced my commitment to creating user-friendly interfaces and explaining complex technical concepts in accessible ways.</p>
+                        <p>One of my proudest achievements was implementing a new network security protocol during my internship at the Public Service Commission. Seeing how this improved the organization's data protection firsthand reaffirmed my passion for cybersecurity and its critical role in our increasingly digital world.</p>
+                        <p>As I continue to grow in my career, I'm excited about the possibilities that emerging technologies like cloud computing and artificial intelligence bring to the field. I'm constantly pushing myself to learn and adapt, always with the goal of using my skills to create innovative, secure, and efficient IT solutions.</p>
+                        <p>In my free time, you'll often find me tinkering with new programming languages, participating in hackathons, or volunteering to teach basic computer skills in my community. I believe in the power of technology to empower individuals and communities, and I'm committed to being a part of that positive change.</p>
                     </div>
                 </div>
                 <div class="card shadow-sm">
@@ -456,12 +488,12 @@
         </div>
     </main>
 
-    <footer class="bg-dark text-white text-center py-4">
-        <p class="mb-2">&copy; 2024 Gideon K. Ngetich. All rights reserved.</p>
-        <div>
-            <a href="#" class="text-white me-3"><i class="fab fa-linkedin fa-lg"></i></a>
-            <a href="#" class="text-white me-3"><i class="fab fa-github fa-lg"></i></a>
-            <a href="https://x.com/Gideon_K_N" class="text-white"><i class="fab fa-twitter fa-lg"></i></a>
+    <footer class="bg-info text-Dark Navy Blue text-center py-3">
+        <p class="mb-0">&copy; 2024 Gideon K. Ngetich. All rights reserved.</p>
+        <div class="mt-2">
+            <a href="#" class="text-white me-3"><i class="fab fa-linkedin"></i></a>
+            <a href="#" class="text-white me-3"><i class="fab fa-github"></i></a>
+            <a href="https://x.com/Gideon_K_N" class="text-white"><i class="fab fa-twitter"></i></a>
         </div>
     </footer>
 

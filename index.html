@@ -10,6 +10,11 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
+/*         html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        } */
         body {
             font-family: 'Poppins', sans-serif;
             display: flex;
@@ -18,6 +23,7 @@
         }
         main {
             flex: 1 0 auto;
+            border-radius: 10px 10px 0 0;
         }
         .navbar {
             background-color: rgba(33, 37, 41, 0.9);
@@ -41,23 +47,69 @@
 
         .navbar-nav .nav-link:hover::after {
             width: 100%;
+            transform: translateY(-5px);
+            background-color: #05395a;
         }
 
         .hero-section {
-            background: linear-gradient(135deg, #1a73e8, #4285f4, #6baedc); /* Shades of blue for a professional look */
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
+            background-color: #05395a; /* Solid dark blue color */
+            color: #ffffff;
+            padding: px 0; /* Reduced from 100px to 60px */
+            position: relative;
+            overflow: hidden;
+            border-radius: 0 0 20px 20px;
         }
 
-        .hero-section h1, .hero-section p {
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: -20px; /* Adjusted from -50px */
+            right: -20px; /* Adjusted from -50px */
+            width: 60px; /* Reduced from 100px */
+            height: 60px; /* Reduced from 100px */
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            z-index: 1;
         }
 
-        @keyframes gradientBG {
-            0% {background-position: 0% 50%;}
-            50% {background-position: 100% 50%;}
-            100% {background-position: 0% 50%;}
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            bottom: -15px; /* Adjusted from -30px */
+            left: -15px; /* Adjusted from -30px */
+            width: 40px; /* Reduced from 60px */
+            height: 40px; /* Reduced from 60px */
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            z-index: 1;
         }
+
+        .hero-section .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-section h1 {
+            font-size: 2.5rem; /* Reduced from 3.5rem */
+            font-weight: 700;
+            margin-bottom: 15px; /* Reduced from 20px */
+            letter-spacing: 1px;
+        }
+
+        .hero-section .lead {
+            font-size: 1.2rem; /* Reduced from 1.5rem */
+            font-weight: 300;
+            margin-bottom: 20px; /* Reduced from 30px */
+        }
+
+        .hero-cta .btn {
+            padding: 8px 20px; /* Reduced from 12px 30px */
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
 
         .social-icons a {
             font-size: 2rem;
@@ -172,13 +224,12 @@
         .sidebar .nav-link:hover,
         .sidebar .nav-link.active {
             transform: translateY(-5px);
-            background-color: #000000;
+            background-color: #05395a;
             /* background-color: #ffd700; */
             transition: width 0.3s ease;
             font-weight: bold;
         }
-/* 
-        .sidebar .nav-link.active {
+       /*.sidebar .nav-link.active {
             font-weight: bold;
             color:  rgba(33, 37, 41, 0.9);
         }
@@ -186,7 +237,7 @@
         .sidebar-sticky {
             position: sticky;
             top: 0;
-            height: 50vh;
+            height: 80vh;
             overflow-y: auto;
             /* position: relative; */
             overflow: hidden;
@@ -198,7 +249,7 @@
             bottom: -50px;
             left: -50px;
             width: 100px;
-            height: 100px;
+            height: 50px;
             background-color: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             transform: rotate(45deg);
@@ -276,7 +327,7 @@
             --bg-color: #f8f9fa;
         }
         section {
-            padding: 30px 0;
+            padding: 15px 0;
         }
         footer {
             flex-shrink: 0;
@@ -285,7 +336,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-blue bg-info sticky-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">Gideon's Digital Resume</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -301,6 +352,12 @@
                         <a class="nav-link" href="about.html">About</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="project.html">Project</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="contact.html">Contact</a>
                     </li>
                 </ul>
@@ -312,7 +369,11 @@
         <div class="container">
             <h1 class="display-4">Welcome to My World</h1>
             <p class="lead">IT Professional | Web Developer | Network Engineer</p>
-            <div class="social-icons mt-4">
+            <div class="hero-cta mt-4">
+                <a href="about.html" class="btn btn-primary btn-lg mr-3">Learn More</a>
+                <a href="contact.html" class="btn btn-outline-light btn-lg">Get in Touch</a>
+            </div>
+            <div class="social-icons mt-5">
                 <a href="https://www.facebook.com/gideonkipngeno95"><i class="fab fa-facebook-f"></i></a>
                 <a href="https://x.com/Gideon_K_N"><i class="fab fa-twitter"></i></a>
                 <a href="#"><i class="fab fa-linkedin-in"></i></a>
@@ -366,11 +427,11 @@
                 <section id="about" class="row mb-5 align-items-center">
                     <div class="col-md-6">
                         <h2 class="mb-4">About Me</h2>
-                        <p>I'm Gideon, an IT professional with a passion for web development and network security. My
+                        <p class="card-text">I'm Gideon, an IT professional with a passion for web development and network security. My
                             journey in the tech world began at Zetech University, where I pursued a Bachelor of Science
-                            in Information Technology. Since then, I've been on an exciting path of continuous learning
-                            and growth in the ever-evolving field of information technology.</p>
-                        <a href="about.html" class="btn btn-primary">Learn More</a>
+                            in Information Technology. Since then,....</p> 
+                        <a href="about.html" class="btn btn-primary" aria-label="Read more about me">Read More</a>
+                        <!-- <a href="about.html" class="btn btn-primary">Learn More</a> -->
                     </div>
                     <div class="col-md-6">
                         <img src="Gideon Ngetich.png" alt="Profile Image" class="img-fluid rounded shadow">
@@ -475,32 +536,31 @@
                     <div class="row">
                         <div class="col-md-4 mb-4">
                             <div class="card">
-                                <img src="project1.jpg" class="card-img-top" alt="Project 1">
+                                <img src="Appraisal.jpg" class="card-img-top" alt="Project 1">
                                 <div class="card-body">
                                     <h5 class="card-title">Staff Appraisal System</h5>
                                     <p class="card-text">The University Staff Appraisal System is a comprehensive platform designed to streamline various aspects of staff and student interactions within the university.</p>
-                                    <a href="#" class="btn btn-primary">View Details</a>
+                                    <a href="project.html" class="btn btn-primary">View Details</a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-4 mb-4">
                             <div class="card">
-                                <img src="project2.jpg" class="card-img-top" alt="Project 2">
+                                <img src="Website.jpg" class="card-img-top" alt="Project 2">
                                 <div class="card-body">
                                     <h5 class="card-title">Portfolio Website</h5>
                                     <p class="card-text">This is an online platform designed to showcase my work, skills, and achievements. It serves as a digital resume and portfolio, allowing visitors to explore my professional background and creative projects.</p>
-                                    <a href="#" class="btn btn-primary">View Details</a>
+                                    <a href="project" class="btn btn-primary">View Details</a>
                                 </div>
                             </div>
                         </div>
                         <div class="col-md-4 mb-4">
                             <div class="card">
-                                <img src="project3.jpg" class="card-img-top" alt="Project 3">
+                                <img src="Website.jpg" class="card-img-top" alt="Project 2">
                                 <div class="card-body">
-                                    <h5 class="card-title">Project Title 3</h5>
-                                    <p class="card-text">A brief description of the project goes here. Highlight the
-                                        technologies used and the goals achieved.</p>
-                                    <a href="#" class="btn btn-primary">View Details</a>
+                                    <h5 class="card-title">Portfolio Website</h5>
+                                    <p class="card-text">This is an online platform designed to showcase my work, skills, and achievements. It serves as a digital resume and portfolio, allowing visitors to explore my professional background and creative projects.</p>
+                                    <a href="project" class="btn btn-primary">View Details</a>
                                 </div>
                             </div>
                         </div>
@@ -600,7 +660,8 @@
                                     <img src="article1.jpg" class="card-img-top" alt="Article 1" loading="lazy">
                                 </div>
                                 <div class="card-body">
-                                    <h5 class="card-title"><span class="category-tag">Cybersecurity</span></h5>
+                                    <h5 class="card-title">The Future of Cybersecurity</h5>
+                                    <!-- <span class="category-tag">Cybersecurity</span> -->
                                     <p class="card-text">
                                         <small class="text-muted">
                                             <i class="far fa-calendar-alt"></i> August 10, 2024
@@ -653,7 +714,7 @@
                         </div>
                 </section>
                  <!-- Awards & Recognitions -->
-                 <section class="mb-5">
+                 <section id="awards"class="mb-5">
                     <h3 class="text-center mb-4">Awards & Recognitions</h3>
                     <div class="row justify-content-center">
                     <div class="col-md-4 mb-3 text-center">
@@ -696,7 +757,7 @@
                 </section>
             
                 <!-- Technologies -->
-                <section class="mb-5">
+                <section id="technologies" class="mb-5">
                     <h3 class="text-center mb-4">Technologies I Work With</h3>
                     <div class="row justify-content-center text-center">
                     <div class="col-4 col-md-2 mb-3">
@@ -743,9 +804,12 @@
         </div>
     </div>
 </section>
-<footer class="bg-dark text-white text-center py-4 mt-auto">
-    <div class="container">
-        <p class="mb-0">&copy; 2024 Gideon K. Ngetich. All rights reserved.</p>
+<footer class="bg-info text-Dark Navy Blue text-center py-3">
+    <p class="mb-0">&copy; 2024 Gideon K. Ngetich. All rights reserved.</p>
+    <div class="mt-2">
+        <a href="#" class="text-white me-3"><i class="fab fa-linkedin"></i></a>
+        <a href="#" class="text-white me-3"><i class="fab fa-github"></i></a>
+        <a href="https://x.com/Gideon_K_N" class="text-white"><i class="fab fa-twitter"></i></a>
     </div>
 </footer>
 
