@@ -245,36 +245,55 @@
             box-shadow: 0 8px 16px rgba(0,0,0,0.2);
         }
         .main-card {
-            padding-bottom: 100px; /* Adjust based on mission card height */
+            padding-bottom: 100px; /* Adjust as needed to accommodate the mission card */
+        }
+
+        .info-card, .photo-card, .mission-card {
+            background-color: #ecf0f1;
+            border: none;
+            border-radius: 25px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .info-card .card-body, .photo-card .card-body {
+            padding: 24px;
+        }
+
+        .info-card .card-title, .photo-card .card-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #007bff;
+            margin-bottom: 0.7rem;
         }
 
         .mission-card {
             position: absolute;
             left: 20px;
             bottom: 20px;
-            width: 60%; /* Adjust as needed */
-            max-width: 450px;
-            background-color:#ecf0f1;
-            ;
+            width: 60%;
+            max-width: 478px;
+            background-color: #ecf0f1;
             border: none;
             border-radius: 25px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .mission-card .card-title {
-            font-size: 1.4rem; /* Increased from 1.2rem */
+            font-size: 24px; /* Increased from 1.4rem */
             font-weight: 600;
             color: #007bff;
-            margin-bottom: 0.7rem; /* Slightly increased */
+            margin-bottom: 18px; /* Increased from 0.7rem */
         }
 
         .mission-card .blockquote {
-            font-size: 1rem; /* Increased from 0.9rem */ 
+            font-size: 18px; /* Increased from 1rem */
             font-style: italic;
+            line-height: 1.6; /* Added for better readability */
         }
 
         .mission-card .card-body {
-            padding: 1.5rem; /* Increased from 1rem */
+            padding: 50px; /* Increased from 1.5rem */
         }
 
         @media (max-width: 768px) {
@@ -435,12 +454,12 @@
                     <li class="nav-item">
                         <a class="nav-link" href="about.html">About</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="project.html">Project</a>
+                <!--<li class="nav-item">
+                        <a class="nav-link" href="#project.html">Project</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="blog.html">Blog</a>
-                    </li>
+                        <a class="nav-link" href="#blog.html">Blog</a>
+                    </li> -->
                     <li class="nav-item">
                         <a class="nav-link " href="contact.html">Contact</a>
                     </li>
@@ -500,33 +519,46 @@
             </nav>
 
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 main-content">
-            <!-- About Section -->
-            <section id="about" class="my-5 py-4">
-                <div class="card main-card position-relative">
-                    <div class="card-body">
-                        <h2 class="section-title text-center">About Me</h2>
-                        <div class="decorative-line"></div>
-                        <div class="row align-items-center">
-                            <div class="col-md-6">
-                                <p class="card-text">I'm Gideon, an IT professional with a passion for web development and network security. My journey in the tech world began at Zetech University, where I pursued a Bachelor of Science in Information Technology.</p>
-                                <p>With 4 years of experience in the industry, I've had the opportunity to work on a variety of projects, from developing user-friendly web applications to implementing robust network solutions. I thrive on challenges and am always eager to expand my skill set to stay at the forefront of technological advancements.</p>
-                                <!-- <a href="about.html" class="btn btn-primary btn-lg" aria-label="Read more about me">Read More</a> -->
-                            </div>
-                            <div class="col-md-6">
-                                <img src="Gideon Ngetich.png" alt="Profile Image" class="img-fluid rounded shadow">
-                            </div>
+        <!-- About Section -->
+        <section id="about" class="my-5 py-4">
+            <div class="card main-card position-relative">
+                <div class="card-body">
+                    <h2 class="section-title text-center">About Me</h2>
+                    <div class="bg-white py-2">
+                        <div class="container">
+                            <p class="mb-0 text-end" id="currentDate"></p>
                         </div>
                     </div>
-                    <div class="card mission-card shadow-sm">
-                        <div class="card-body">
-                            <h3 class="card-title">My Mission</h3>
-                            <blockquote class="blockquote mb-0">
-                                <p class="card-text"><em>"My mission is to leverage technology in solving complex problems and driving innovation in the IT industry."</em></p>
-                            </blockquote>
+                    <div class="decorative-line"></div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="card info-card shadow-sm">
+                                <div class="card-body">
+                                    <h3 class="card-title">My Background</h3>
+                                    <p class="card-text">I'm Gideon, an IT professional with a passion for web development and network security. My journey in the tech world began at Zetech University, where I pursued a Bachelor of Science in Information Technology.</p>
+                                    <p>With 4 years of experience in the industry, I've had the opportunity to work on a variety of projects, from developing user-friendly web applications to implementing robust network solutions. I thrive on challenges and am always eager to expand my skill set to stay at the forefront of technological advancements.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card photo-card shadow-sm">
+                                <div class="card-body">
+                                    <img src="Gideon Ngetich.png" alt="Profile Image" class="img-fluid rounded">
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </section>
+                <div class="card mission-card shadow-sm">
+                    <div class="card-body">
+                        <h3 class="card-title">My Mission</h3>
+                        <blockquote class="blockquote mb-0">
+                            <p class="card-text"><em>"My mission is to leverage technology in solving complex problems and driving innovation in the IT industry."</em></p>
+                        </blockquote>
+                    </div>
+                </div>
+            </div>
+        </section>
             
          <!-- Skills Section -->
          <section id="skills" class="mb-5">
@@ -866,7 +898,7 @@
                         <a href="#" class="small text-muted me-2">Terms of Service</a>
                         <a href="#" class="small text-muted">Privacy Policy</a>
                     </div>
-                    <p class="small text-muted mb-0">IT Professional | Web Developer | Network Security Specialist</p>
+                    <p class="small text-white mb-0">IT Professional | Web Developer | Network Security Specialist</p>
                 </div>
                 <div class="col-lg-2 col-md-6">
                     <h5 class="text-white mb-3">Quick Links</h5>
