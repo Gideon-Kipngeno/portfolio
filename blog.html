@@ -13,16 +13,16 @@
             background-color: #f8f9fa;
             color: #333;
         }
+        /* Navbar styles */
         .navbar {
             background-color: rgba(33, 37, 41, 0.9);
             backdrop-filter: blur(10px);
-            z-index: 1000;
         }
         .navbar-nav .nav-link {
             position: relative;
             transition: color 0.3s ease;
-            /* color: #ffffff; */
         }
+
         .navbar-nav .nav-link::after {
             content: '';
             position: absolute;
@@ -33,6 +33,7 @@
             background-color: #ffd700;
             transition: width 0.3s ease;
         }
+
         .navbar-nav .nav-link:hover::after {
             width: 100%;
         }
