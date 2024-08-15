@@ -245,10 +245,11 @@
             box-shadow: 0 8px 16px rgba(0,0,0,0.2);
         }
         .main-card {
-            padding-bottom: 100px; /* Adjust as needed to accommodate the mission card */
+            overflow: hidden;
         }
 
-        .info-card, .photo-card, .mission-card {
+        .info-card, .photo-card {
+            height: 100%;
             background-color: #ecf0f1;
             border: none;
             border-radius: 25px;
@@ -256,59 +257,26 @@
             margin-bottom: 20px;
         }
 
-        .info-card .card-body, .photo-card .card-body {
-            padding: 24px;
+        .mission-statement {
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
         }
 
-        .info-card .card-title, .photo-card .card-title {
-            font-size: 24px;
-            font-weight: 600;
-            color: #007bff;
-            margin-bottom: 0.7rem;
+        .mission-statement h3 {
+            color: #333;
         }
 
-        .mission-card {
-            position: absolute;
-            left: 20px;
-            bottom: 20px;
-            width: 60%;
-            max-width: 440px;
-            background-color: #ecf0f1;
-            border: none;
-            border-radius: 25px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        .mission-statement blockquote {
+            font-size: 1.1rem;
+            color: #555;
         }
 
-        .mission-card .card-title {
-            font-size: 24px; /* Increased from 1.4rem */
-            font-weight: 600;
-            color: #007bff;
-            margin-bottom: 18px; /* Increased from 0.7rem */
-        }
-
-        .mission-card .blockquote {
-            font-size: 18px; /* Increased from 1rem */
-            font-style: italic;
-            line-height: 1.6; /* Added for better readability */
-        }
-
-        .mission-card .card-body {
-            padding: 44px; /* Increased from 1.5rem */
-        }
-
-        @media (max-width: 768px) {
-            .mission-card {
-                position: static;
-                width: 100%;
-                max-width: none;
-                margin-top: 1rem;
-            }
-
-            .main-card {
-                padding-bottom: 20px;
+        @media (max-width: 767px) {
+            .mb-4 {
+                margin-bottom: 1.5rem !important;
             }
         }
-
         /* Footer styles */
         .footer {
             background-color: #1a1e21;
@@ -454,12 +422,12 @@
                     <li class="nav-item">
                         <a class="nav-link" href="about.html">About</a>
                     </li>
-                <!--<li class="nav-item">
+                    <li class="nav-item">
                         <a class="nav-link" href="#project.html">Project</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item disable">
                         <a class="nav-link" href="#blog.html">Blog</a>
-                    </li> -->
+                    </li>
                     <li class="nav-item">
                         <a class="nav-link " href="contact.html">Contact</a>
                     </li>
@@ -521,7 +489,7 @@
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 main-content">
         <!-- About Section -->
         <section id="about" class="my-5 py-4">
-            <div class="card main-card position-relative">
+            <div class="card main-card">
                 <div class="card-body">
                     <h2 class="section-title text-center">About Me</h2>
                     <div class="bg-white py-2">
@@ -530,9 +498,9 @@
                         </div>
                     </div>
                     <div class="decorative-line"></div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div class="card info-card shadow-sm">
+                    <div class="row mb-4">
+                        <div class="col-md-6 mb-4 mb-md-0">
+                            <div class="card info-card shadow-sm h-100">
                                 <div class="card-body">
                                     <h3 class="card-title">My Background</h3>
                                     <p class="card-text">I'm Gideon, an IT professional with a passion for web development and network security. My journey in the tech world began at Zetech University, where I pursued a Bachelor of Science in Information Technology.</p>
@@ -541,19 +509,17 @@
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="card photo-card shadow-sm">
+                            <div class="card photo-card shadow-sm h-100">
                                 <div class="card-body">
                                     <img src="Gideon Ngetich.png" alt="Profile Image" class="img-fluid rounded">
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="card mission-card shadow-sm">
-                    <div class="card-body">
-                        <h3 class="card-title">My Mission</h3>
-                        <blockquote class="blockquote mb-0">
-                            <p class="card-text"><em>"My mission is to leverage technology in solving complex problems and driving innovation in the IT industry."</em></p>
+                    <div class="mission-statement mt-4">
+                        <h3 class="text-center mb-3">My Mission</h3>
+                        <blockquote class="blockquote text-center">
+                            <p class="mb-0"><em>"My mission is to leverage technology in solving complex problems and driving innovation in the IT industry."</em></p>
                         </blockquote>
                     </div>
                 </div>
@@ -568,134 +534,139 @@
                 <!-- Technical Skills -->
                 <div class="col-md-6 mb-4">
                     <h3 class="text-center mb-4"><i class="fas fa-code section-icon"></i>Technical Skills</h3>
-                        <div class="skill-item mb-3">
-                            <div class="d-flex justify-content-between">
-                                <span>HTML</span>
-                                <span>90%</span>
-                            </div>
-                            <div class="skill-progress">
-                                <div class="skill-progress-bar" style="width: 90%"></div>
-                            </div>
+                    <div class="skill-item mb-3">
+                        <div class="d-flex justify-content-between">
+                            <span>HTML</span>
+                            <span>90%</span>
                         </div>
-                        <div class="skill-item mb-3">
-                            <div class="d-flex justify-content-between">
-                                <span>CSS</span>
-                                <span>85%</span>
-                            </div>
-                            <div class="skill-progress">
-                                <div class="skill-progress-bar" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item mb-3">
-                            <div class="d-flex justify-content-between">
-                                <span>JavaScript</span>
-                                <span>75%</span>
-                            </div>
-                            <div class="skill-progress">
-                                <div class="skill-progress-bar" style="width: 75%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item mb-3">
-                            <div class="d-flex justify-content-between">
-                                <span>Python</span>
-                                <span>80%</span>
-                            </div>
-                            <div class="skill-progress">
-                                <div class="skill-progress-bar" style="width: 80%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item mb-3">
-                            <div class="d-flex justify-content-between">
-                                <span>Network Security</span>
-                                <span>70%</span>
-                            </div>
-                            <div class="skill-progress">
-                                <div class="skill-progress-bar" style="width: 70%"></div>
-                            </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar" style="width: 90%"></div>
                         </div>
                     </div>
-                    <div class="col-md-6 mb-4">
-                        <h3 class="text-center mb-4"><i class="fas fa-users section-icon"></i>Soft Skills</h3>
-                        <!-- Soft skills content -->
-                        <div class="skill-item mb-3">
-                            <div class="d-flex justify-content-between">
-                                <span>Problem Solving</span>
-                                <span>95%</span>
-                            </div>
-                            <div class="skill-progress">
-                                <div class="skill-progress-bar" style="width: 95%"></div>
-                            </div>
+                    <div class="skill-item mb-3">
+                        <div class="d-flex justify-content-between">
+                            <span>CSS</span>
+                            <span>85%</span>
                         </div>
-                        <div class="skill-item mb-3">
-                            <div class="d-flex justify-content-between">
-                                <span>Communication</span>
-                                <span>85%</span>
-                            </div>
-                            <div class="skill-progress">
-                                <div class="skill-progress-bar" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item mb-3">
-                            <div class="d-flex justify-content-between">
-                                <span>Teamwork</span>
-                                <span>90%</span>
-                            </div>
-                            <div class="skill-progress">
-                                <div class="skill-progress-bar" style="width: 90%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item mb-3">
-                            <div class="d-flex justify-content-between">
-                                <span>Adaptability</span>
-                                <span>80%</span>
-                            </div>
-                            <div class="skill-progress">
-                                <div class="skill-progress-bar" style="width: 80%"></div>
-                            </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar" style="width: 85%"></div>
                         </div>
                     </div>
-                </section>
-            
-                <section id="portfolio" class="mb-5">
-                    <h2 class="section-title text-center">Portfolio Highlights</h2>
-                    <div class="decorative-line"></div>
-                    <div class="row row-cols-1 row-cols-md-3 g-4">
-                        <div class="col d-flex">
-                            <div class="card flex-fill">
-                                <img src="Appraisal.jpg" class="card-img-top" alt="Project 1">
-                                <div class="card-body">
-                                    <h5 class="card-title">Staff Appraisal System</h5>
-                                    <p class="card-text">The University Staff Appraisal System is a comprehensive platform designed to streamline various aspects of staff and student interactions within the university.</p>
-                                </div>
-                            </div>
+                    <div class="skill-item mb-3">
+                        <div class="d-flex justify-content-between">
+                            <span>JavaScript</span>
+                            <span>75%</span>
                         </div>
-                        <div class="col d-flex">
-                            <div class="card flex-fill">
-                                <img src="Website.jpg" class="card-img-top" alt="Project 2">
-                                <div class="card-body">
-                                    <h5 class="card-title">Portfolio Website</h5>
-                                    <p class="card-text">This is an online platform designed to showcase my work, skills, and achievements. It serves as a digital resume and portfolio, allowing visitors to explore my professional background and creative projects.</p>
-                                </div>
-                            </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar" style="width: 75%"></div>
                         </div>
-                        <div class="col d-flex">
-                            <div class="card flex-fill">
-                                <img src="Website.jpg" class="card-img-top" alt="Project 2">
-                                <div class="card-body">
-                                    <h5 class="card-title">Portfolio Website</h5>
-                                    <p class="card-text">This is an online platform designed to showcase my work, skills, and achievements. It serves as a digital resume and portfolio, allowing visitors to explore my professional background and creative projects.</p>
-                                </div>
-                            </div>
-                        </div> 
                     </div>
-                    <div class="text-center mt-4">
-                        <a href="projects.html" class="btn btn-primary btn-lg">View All Projects</a>
+                    <div class="skill-item mb-3">
+                        <div class="d-flex justify-content-between">
+                            <span>Python</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar" style="width: 80%"></div>
+                        </div>
                     </div>
-                </section>
-            
-                <div class="row mb-5">
-                    <div class="col-md-8">
-                        <section id="experience" class="mb-5">
+                    <div class="skill-item mb-3">
+                        <div class="d-flex justify-content-between">
+                            <span>Network Security</span>
+                            <span>70%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar" style="width: 70%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <h3 class="text-center mb-4"><i class="fas fa-users section-icon"></i>Soft Skills</h3>
+                    <!-- Soft skills content -->
+                    <div class="skill-item mb-3">
+                        <div class="d-flex justify-content-between">
+                            <span>Problem Solving</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item mb-3">
+                        <div class="d-flex justify-content-between">
+                            <span>Communication</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item mb-3">
+                        <div class="d-flex justify-content-between">
+                            <span>Teamwork</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item mb-3">
+                        <div class="d-flex justify-content-between">
+                            <span>Adaptability</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="skill-progress">
+                            <div class="skill-progress-bar" style="width: 80%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="mb-5">
+            <h2 class="section-title text-center">Portfolio Highlights</h2>
+            <div class="decorative-line"></div>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <div class="col d-flex">
+                    <div class="card flex-fill">
+                        <img src="Appraisal.jpg" class="card-img-top" alt="Project 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Staff Appraisal System</h5>
+                            <p class="card-text">The University Staff Appraisal System is a comprehensive platform designed to streamline various aspects of staff and student interactions within the university.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col d-flex">
+                    <div class="card flex-fill">
+                        <img src="Website.jpg" class="card-img-top" alt="Project 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Portfolio Website</h5>
+                            <p class="card-text">This is an online platform designed to showcase my work, skills, and achievements. It serves as a digital resume and portfolio, allowing visitors to explore my professional background and creative projects.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col d-flex">
+                    <div class="card flex-fill">
+                        <img src="Website.jpg" class="card-img-top" alt="Project 2">
+                        <div class="card-body">
+                            <h5 class="card-title">Portfolio Website</h5>
+                            <p class="card-text">This is an online platform designed to showcase my work, skills, and achievements. It serves as a digital resume and portfolio, allowing visitors to explore my professional background and creative projects.</p>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+            <div class="text-center mt-4">
+                <a href="projects.html" class="btn btn-primary btn-lg">View All Projects</a>
+            </div>
+        </section>
+        
+        <!-- Experience and Technologies Section -->
+        <div class="row mb-5">
+            <div class="col-md-7">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <section id="experience">
                             <h2 class="section-title text-center">Experience Highlights</h2>
                             <div class="decorative-line"></div>
                             <!-- Timeline content -->
@@ -733,160 +704,162 @@
                             </div>
                         </section>
                     </div>
-                    <div class="col-md-4">
-                    <!-- Technologies Section -->
-                    <section id="technologies" class="mb-5">
-                        <h2 class="section-title text-center">Technologies I Work With</h2>
-                        <div class="decorative-line"></div>
-                        <div class="row row-cols-3 row-cols-md-6 g-4">
-                            <div class="col text-center">
-                                <i class="fab fa-html5 fa-3x mb-2" style="color: #E34F26;"></i>
-                                <p>HTML5</p>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="card">
+                    <div class="card-body">
+                        <section id="technologies">
+                            <h2 class="section-title text-center">Technologies I Work With</h2>
+                            <div class="decorative-line"></div>
+                            <div class="row row-cols-3 row-cols-md-2 g-4">
+                                <div class="col text-center">
+                                    <i class="fab fa-html5 fa-3x mb-2" style="color: #E34F26;"></i>
+                                    <p>HTML5</p>
+                                </div>
+                                <div class="col text-center"
+                                    <i class="fab fa-css3-alt fa-3x mb-2" style="color: #1572B6;"></i>
+                                    <p>CSS3</p>
+                                </div>
+                                <div class="col text-center">
+                                    <i class="fab fa-js-square fa-3x mb-2" style="color: #F7DF1E;"></i>
+                                    <p>JavaScript</p>
+                                </div>
+                                <div class="col text-center">
+                                    <i class="fab fa-python fa-3x mb-2" style="color: #3776AB;"></i>
+                                    <p>Python</p>
+                                </div>
+                                <div class="col text-center">
+                                    <i class="fab fa-aws fa-3x mb-2" style="color: #232F3E;"></i>
+                                    <p>AWS</p>
+                                </div>
+                                <!-- Add more technologies as needed -->
                             </div>
-                            <div class="col text-center">
-                                <i class="fab fa-css3-alt fa-3x mb-2" style="color: #1572B6;"></i>
-                                <p>CSS3</p>
-                            </div>
-                            <div class="col text-center">
-                                <i class="fab fa-js-square fa-3x mb-2" style="color: #F7DF1E;"></i>
-                                <p>JavaScript</p>
-                            </div>
-                            <div class="col text-center">
-                                <i class="fab fa-python fa-3x mb-2" style="color: #3776AB;"></i>
-                                <p>Python</p>
-                            </div>
-                            <div class="col text-center">
-                                <i class="fab fa-aws fa-3x mb-2" style="color: #232F3E;"></i>
-                                <p>AWS</p>
-                            </div>
-                            <!-- Add more technologies as needed -->
-                        </div>
-                    </section>
+                        </section>
                     </div>
                 </div>
-            
-                <section id="services" class="mb-5">
-                    <h2 class="section-title text-center">Services</h2>
-                    <div class="decorative-line"></div>
-                    <div class="row row-cols-1 row-cols-md-3 g-4">
-                        <!-- Service cards -->
-                        <div class="col d-flex">
-                            <div class="card flex-fill">
-                                <div class="card-body text-center">
-                                    <i class="fas fa-code fa-3x mb-4"></i>
-                                    <h5 class="card-title">Web Development</h5>
-                                    <p class="card-text">Building responsive and efficient websites tailored to your
-                                        needs.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col d-flex">
-                            <div class="card flex-fill">
-                                <div class="card-body text-center">
-                                    <i class="fas fa-network-wired fa-3x mb-4"></i>
-                                    <h5 class="card-title">Network Security</h5>
-                                    <p class="card-text">Ensuring the security and integrity of your network systems.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col d-flex">
-                            <div class="card flex-fill">
-                                <div class="card-body text-center">
-                                    <i class="fas fa-cogs fa-3x mb-4"></i>
-                                    <h5 class="card-title">IT Consulting</h5>
-                                    <p class="card-text">Providing expert advice to optimize your IT infrastructure.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-            
-                <section id="articles" class="mb-5">
-                    <h2 class="section-title text-center">Latest Articles</h2>
-                    <div class="decorative-line"></div>
-                    <div class="row row-cols-1 row-cols-md-3 g-4">
-                        <!-- Article cards -->
-                        <div class="col d-flex">
-                            <div class="card flex-fill">
-                                <div class="card-header p-0 text-center">
-                                    <i class="fas fa-shield-alt fa-5x mt-3 mb-3"></i>
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">The Future of Cybersecurity</h5>
-                                    <!-- <span class="category-tag">Cybersecurity</span> -->
-                                    <p class="card-text">
-                                        <small class="text-muted">
-                                            <i class="far fa-calendar-alt"></i> August 10, 2024
-                                            <i class="far fa-clock ml-2"></i> 5 min read
-                                        </small>
-                                    </p>
-                                    <p class="card-text"><small class="text-muted">Published: August 10, 2024</small></p>
-                                    <p class="card-text">Explore the emerging trends in cybersecurity, including AI-driven threat detection, quantum encryption, and zero-trust architectures...</p> 
-                                </div>                               
-                            </div>
-                        </div>
-                        <div class="col d-flex">
-                            <div class="card flex-fill">
-                                <div class="card-header p-0 text-center">
-                                    <div class="device-icons mt-3 mb-3">
-                                        <i class="fas fa-mobile-alt fa-2x"></i>
-                                        <i class="fas fa-tablet-alt fa-3x mx-2"></i>
-                                        <i class="fas fa-laptop fa-4x"></i>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">Mastering Responsive Web Design</h5>
-                                    <p class="card-text">
-                                        <small class="text-muted">
-                                            <i class="far fa-calendar-alt"></i> August 10, 2024
-                                            <i class="far fa-clock ml-2"></i> 5 min read
-                                        </small>
-                                    </p>
-                                    <p class="card-text"><small class="text-muted">Published: August 10, 2024</small></p>
-                                    <p class="card-text">Dive into the latest techniques for creating truly responsive websites. From CSS Grid to variable fonts, discover how to craft seamless user experiences across all devices....</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col d-flex">
-                            <div class="card flex-fill">
-                                <div class="card-header p-0 text-center">
-                                    <div class="edge-computing-icon mt-3 mb-3">
-                                        <i class="fas fa-cloud fa-4x"></i>
-                                        <div class="edge-nodes">
-                                            <i class="fas fa-laptop fa-2x"></i>
-                                            <i class="fas fa-mobile-alt fa-2x"></i>
-                                            <i class="fas fa-server fa-2x"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">The Rise of Edge Computing</h5>
-                                    <p class="card-text">
-                                        <small class="text-muted">
-                                            <i class="far fa-calendar-alt"></i> August 10, 2024
-                                            <i class="far fa-clock ml-2"></i> 5 min read
-                                        </small>
-                                    </p>
-                                    <p class="card-text"><small class="text-muted">Published: August 10, 2024</small></p>
-                                    <p class="card-text">Uncover the potential of edge computing and its impact on Internet of Things (IoT) applications...</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="text-center mt-4">
-                            <a href="blog.html" class="btn btn-primary btn-lg">View All Articles</a>
-                        </div> 
-                    </div>
-                </section>
-            
-                <section class="mb-5 text-center">
-                    <h3 class="section-title">Let's Work Together</h3>
-                    <p class="lead">Interested in collaborating or have a project in mind?</p>
-                    <a href="contact.html" class="btn btn-primary btn-lg">Get in Touch</a>
-                </section>
-            </main>
+            </div>
         </div>
+        
+        <!-- Services Section -->
+        <section id="services" class="mb-5">
+            <h2 class="section-title text-center">Services</h2>
+            <div class="decorative-line"></div>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <!-- Service cards -->
+                <div class="col d-flex">
+                    <div class="card flex-fill">
+                        <div class="card-body text-center">
+                            <i class="fas fa-code fa-3x mb-4"></i>
+                            <h5 class="card-title">Web Development</h5>
+                            <p class="card-text">Building responsive and efficient websites tailored to your needs.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col d-flex">
+                    <div class="card flex-fill">
+                        <div class="card-body text-center">
+                            <i class="fas fa-network-wired fa-3x mb-4"></i>
+                            <h5 class="card-title">Network Security</h5>
+                            <p class="card-text">Ensuring the security and integrity of your network systems.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col d-flex">
+                    <div class="card flex-fill">
+                        <div class="card-body text-center">
+                            <i class="fas fa-cogs fa-3x mb-4"></i>
+                            <h5 class="card-title">IT Consulting</h5>
+                            <p class="card-text">Providing expert advice to optimize your IT infrastructure.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Articles Section -->
+        <section id="articles" class="mb-5">
+            <h2 class="section-title text-center">Latest Articles</h2>
+            <div class="decorative-line"></div>
+            <div class="row row-cols-1 row-cols-md-3 g-4">
+                <!-- Article cards -->
+                <div class="col d-flex">
+                    <div class="card flex-fill">
+                        <div class="card-header p-0 text-center">
+                            <i class="fas fa-shield-alt fa-5x mt-3 mb-3"></i>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">The Future of Cybersecurity</h5>
+                            <p class="card-text">
+                                <small class="text-muted">
+                                    <i class="far fa-calendar-alt"></i> August 10, 2024
+                                    <i class="far fa-clock ml-2"></i> 5 min read
+                                </small>
+                            </p>
+                            <p class="card-text"><small class="text-muted">Published: August 10, 2024</small></p>
+                            <p class="card-text">Explore the emerging trends in cybersecurity, including AI-driven threat detection, quantum encryption, and zero-trust architectures...</p> 
+                        </div>                               
+                    </div>
+                </div>
+                <div class="col d-flex">
+                    <div class="card flex-fill">
+                        <div class="card-header p-0 text-center">
+                            <div class="device-icons mt-3 mb-3">
+                                <i class="fas fa-mobile-alt fa-2x"></i>
+                                <i class="fas fa-tablet-alt fa-3x mx-2"></i>
+                                <i class="fas fa-laptop fa-4x"></i>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Mastering Responsive Web Design</h5>
+                            <p class="card-text">
+                                <small class="text-muted">
+                                    <i class="far fa-calendar-alt"></i> August 10, 2024
+                                    <i class="far fa-clock ml-2"></i> 5 min read
+                                </small>
+                            </p>
+                            <p class="card-text"><small class="text-muted">Published: August 10, 2024</small></p>
+                            <p class="card-text">Dive into the latest techniques for creating truly responsive websites. From CSS Grid to variable fonts, discover how to craft seamless user experiences across all devices....</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col d-flex">
+                    <div class="card flex-fill">
+                        <div class="card-header p-0 text-center">
+                            <div class="edge-computing-icon mt-3 mb-3">
+                                <i class="fas fa-cloud fa-4x"></i>
+                                <div class="edge-nodes">
+                                    <i class="fas fa-laptop fa-2x"></i>
+                                    <i class="fas fa-mobile-alt fa-2x"></i>
+                                    <i class="fas fa-server fa-2x"></i>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">The Rise of Edge Computing</h5>
+                            <p class="card-text">
+                                <small class="text-muted">
+                                    <i class="far fa-calendar-alt"></i> August 10, 2024
+                                    <i class="far fa-clock ml-2"></i> 5 min read
+                                </small>
+                            </p>
+                            <p class="card-text"><small class="text-muted">Published: August 10, 2024</small></p>
+                            <p class="card-text">Uncover the potential of edge computing and its impact on Internet of Things (IoT) applications...</p>
+                        </div>
+                    </div>
+                </div>               
+                <div class="text-center mt-4">
+                    <a href="blog.html" class="btn btn-primary btn-lg">View All Articles</a>
+                </div> 
+            </div>
+        </section>
+            
+        <section class="mb-5 text-center">
+            <h3 class="section-title">Let's Work Together</h3>
+            <p class="lead">Interested in collaborating or have a project in mind?</p>
+            <a href="contact.html" class="btn btn-primary btn-lg">Get in Touch</a>
+        </section>
+     </main>
+    </div>
     </div>
 
     <footer class="footer py-5">
