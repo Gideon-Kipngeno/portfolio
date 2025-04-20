@@ -3,17 +3,205 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gideon's Projects</title>
+    <title>Gideon's Projects Portfolio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/custom.css">    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #0dcaf0;
+            --secondary-color: #0b5ed7;
+            --dark-color: #212529;
+            --light-color: #f8f9fa;
+            --accent-color: #ffd700;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.7;
+        }
+        
+        /* Navbar styles */
+        .navbar {
+            background-color: var(--dark-color);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+            padding: 0.8rem 0;
+        }
+        .navbar-brand {
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            font-size: 1.25rem;
+        }
+        .navbar-nav .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+            font-weight: 500;
+            margin: 0 0.5rem;
+            padding: 0.5rem 0;
+        }
+        .navbar-nav .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--accent-color);
+            transition: width 0.3s ease;
+        }
+        .navbar-nav .nav-link:hover::after,
+        .navbar-nav .nav-link.active::after {
+            width: 100%;
+        }
+        
+        /* Hero header */
+        .hero-header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: white;
+            padding: 5rem 0;
+            position: relative;
+            overflow: hidden;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+        }
+        .hero-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('https://images.unsplash.com/photo-1499750310107-5fef28a66643?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            opacity: 0.1;
+        }
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        .header-icon {
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .header-icon:hover {
+            transform: translateY(-5px);
+        }
+        .icon-label {
+            display: block;
+            margin-top: 0.5rem;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+        
+        /* Projects section */
+        .projects-section {
+            padding: 4rem 0;
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        .section-header h1 {
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 0.5rem;
+        }
+        .section-header h1::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--primary-color);
+            border-radius: 2px;
+        }
+        .project-card {
+            border: none;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            height: 100%;
+            position: relative;
+        }
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        .project-card .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+        .project-card .card-body {
+            padding: 1.5rem;
+        }
+        .project-card .card-title {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+        .project-card .card-text {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+        .project-card .btn {
+            border-radius: 50px;
+            padding: 0.5rem 1.5rem;
+            font-weight: 500;
+        }
+        .tech-badge {
+            display: inline-block;
+            background-color: rgba(13, 202, 240, 0.1);
+            color: var(--primary-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        footer p {
+            margin-bottom: 0;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .hero-header {
+                padding: 4rem 0;
+            }
+            .header-icons {
+                margin-top: 2rem;
+                justify-content: center !important;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-header {
+                clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+                padding: 3rem 0;
+            }
+            .hero-header h1 {
+                font-size: 2.25rem;
+            }
+        }
+    </style>
 </head>
 <body>
-     <!-- Navbar -->
-     <nav class="navbar navbar-expand-lg navbar-blue bg-info sticky-top">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html">Gideon's Digital Resume</a>
+            <a class="navbar-brand" href="index.html">
+                <i class="#"></i>Gideon's Portfolio
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -27,7 +215,7 @@
                         <a class="nav-link" href="about.html">About</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="project.html">Project</a>
+                        <a class="nav-link active" href="project.html">Projects</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="blog.html">Blog</a>
@@ -40,15 +228,18 @@
         </div>
     </nav>
 
-    <header class="header">
-        <div class="container">
+    <!-- Hero Header -->
+    <header class="hero-header">
+        <div class="container hero-content">
             <div class="row align-items-center">
                 <div class="col-lg-8 text-center text-lg-start">
-                    <h1 class="display-4 fw-bold mb-3">My Projects</h1>
+                    <h1 class="display-4 fw-bold mb-3">My Projects Portfolio</h1>
                     <p class="lead mb-4">Showcasing my expertise in IT and Web Development through innovative solutions and cutting-edge technologies.</p>
-                    <a href="#projects" class="btn btn-light btn-lg">Explore Projects</a>
+                    <a href="#projects" class="btn btn-light btn-lg px-4">
+                        <i class="fas fa-arrow-down me-2"></i>Explore Projects
+                    </a>
                 </div>
-                <div class="col-lg-4 mt-5 mt-lg-0">
+                <div class="col-lg-4">
                     <div class="header-icons d-flex justify-content-center justify-content-lg-end">
                         <div class="header-icon me-4">
                             <i class="fas fa-laptop-code fa-3x"></i>
@@ -68,87 +259,264 @@
         </div>
     </header>
 
-    <main class="container mt-5">
-        <div class="section-header">
-            <h1>Our Projects</h1>
-        </div>
-        <div class="row g-4">
-            <div class="col-md-6">
-                <div class="card project-card shadow-sm">
-                    <!-- <img src="project1.jpg" class="card-img-top" alt="Network Security System"> -->
-                    <div class="card-body">
-                        <h3 class="card-title">Network Security System</h3>
-                        <p class="card-text">Comprehensive network security system with advanced firewall and intrusion detection.</p>
-                        <div class="project-details">
-                            <p><strong>Technologies:</strong> Cisco ASA, Snort IDS, Python</p>
-                            <p><strong>Duration:</strong> 6 months</p>
+    <!-- Projects Section -->
+    <section class="projects-section" id="projects">
+        <div class="container">
+            <div class="section-header">
+                <h1 class="display-5 fw-bold">Featured Projects</h1>
+                <p class="lead text-muted">A selection of my most recent and significant work</p>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Project 1 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card project-card shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="card-img-top" alt="Network Security System">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h3 class="card-title">Network Security System</h3>
+                                <span class="badge bg-primary">Completed</span>
+                            </div>
+                            <p class="card-text">Designed and implemented a comprehensive network security system with advanced firewall protection and intrusion detection capabilities for a financial institution.</p>
+                            
+                            <div class="mb-3">
+                                <span class="tech-badge">Cisco ASA</span>
+                                <span class="tech-badge">Snort IDS</span>
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">SIEM</span>
+                            </div>
+                            
+                            <div class="project-meta mb-3">
+                                <small class="text-muted"><i class="far fa-calendar me-1"></i> 6 months</small>
+                                <small class="text-muted ms-3"><i class="fas fa-users me-1"></i> Team of 4</small>
+                            </div>
+                            
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="#" class="btn btn-primary">View Details</a>
+                                <a href="#" class="text-muted"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            </div>
                         </div>
-                        <a href="#" class="btn btn-primary">View Details</a>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card project-card shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="card-img-top" alt="E-commerce Website">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h3 class="card-title">E-commerce Platform</h3>
+                                <span class="badge bg-success">Active</span>
+                            </div>
+                            <p class="card-text">Developed a full-featured e-commerce platform with React frontend and Node.js backend, featuring secure payment processing and inventory management.</p>
+                            
+                            <div class="mb-3">
+                                <span class="tech-badge">React</span>
+                                <span class="tech-badge">Node.js</span>
+                                <span class="tech-badge">MongoDB</span>
+                                <span class="tech-badge">Stripe API</span>
+                            </div>
+                            
+                            <div class="project-meta mb-3">
+                                <small class="text-muted"><i class="far fa-calendar me-1"></i> 4 months</small>
+                                <small class="text-muted ms-3"><i class="fas fa-users me-1"></i> Solo Project</small>
+                            </div>
+                            
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="#" class="btn btn-primary">View Details</a>
+                                <a href="#" class="text-muted"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card project-card shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="card-img-top" alt="Cloud Migration Project">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h3 class="card-title">Cloud Migration</h3>
+                                <span class="badge bg-primary">Completed</span>
+                            </div>
+                            <p class="card-text">Led the migration of enterprise infrastructure from on-premise to AWS cloud, achieving 40% cost reduction and improved scalability.</p>
+                            
+                            <div class="mb-3">
+                                <span class="tech-badge">AWS EC2</span>
+                                <span class="tech-badge">S3</span>
+                                <span class="tech-badge">RDS</span>
+                                <span class="tech-badge">Docker</span>
+                            </div>
+                            
+                            <div class="project-meta mb-3">
+                                <small class="text-muted"><i class="far fa-calendar me-1"></i> 8 months</small>
+                                <small class="text-muted ms-3"><i class="fas fa-users me-1"></i> Team of 6</small>
+                            </div>
+                            
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="#" class="btn btn-primary">View Details</a>
+                                <a href="#" class="text-muted"><i class="fas fa-external-link-alt"></i> Case Study</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 4 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card project-card shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="card-img-top" alt="IoT Home Automation System">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h3 class="card-title">IoT Home Automation</h3>
+                                <span class="badge bg-warning text-dark">In Progress</span>
+                            </div>
+                            <p class="card-text">Developed a smart home automation system using Raspberry Pi and IoT sensors, with mobile app control and energy monitoring features.</p>
+                            
+                            <div class="mb-3">
+                                <span class="tech-badge">Raspberry Pi</span>
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">MQTT</span>
+                                <span class="tech-badge">React Native</span>
+                            </div>
+                            
+                            <div class="project-meta mb-3">
+                                <small class="text-muted"><i class="far fa-calendar me-1"></i> 3 months</small>
+                                <small class="text-muted ms-3"><i class="fas fa-users me-1"></i> Team of 3</small>
+                            </div>
+                            
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="#" class="btn btn-primary">View Details</a>
+                                <a href="#" class="text-muted"><i class="fas fa-external-link-alt"></i> Prototype</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 5 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card project-card shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="card-img-top" alt="Data Analytics Dashboard">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h3 class="card-title">Data Analytics Dashboard</h3>
+                                <span class="badge bg-primary">Completed</span>
+                            </div>
+                            <p class="card-text">Created an interactive business intelligence dashboard for real-time data visualization and decision making.</p>
+                            
+                            <div class="mb-3">
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">Django</span>
+                                <span class="tech-badge">Chart.js</span>
+                                <span class="tech-badge">PostgreSQL</span>
+                            </div>
+                            
+                            <div class="project-meta mb-3">
+                                <small class="text-muted"><i class="far fa-calendar me-1"></i> 5 months</small>
+                                <small class="text-muted ms-3"><i class="fas fa-users me-1"></i> Team of 2</small>
+                            </div>
+                            
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="#" class="btn btn-primary">View Details</a>
+                                <a href="#" class="text-muted"><i class="fas fa-external-link-alt"></i> Demo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 6 -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="card project-card shadow-sm">
+                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" class="card-img-top" alt="Mobile Banking App">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <h3 class="card-title">Mobile Banking App</h3>
+                                <span class="badge bg-success">Active</span>
+                            </div>
+                            <p class="card-text">Developed a secure mobile banking application with biometric authentication and real-time transaction processing.</p>
+                            
+                            <div class="mb-3">
+                                <span class="tech-badge">Flutter</span>
+                                <span class="tech-badge">Firebase</span>
+                                <span class="tech-badge">Node.js</span>
+                                <span class="tech-badge">OAuth</span>
+                            </div>
+                            
+                            <div class="project-meta mb-3">
+                                <small class="text-muted"><i class="far fa-calendar me-1"></i> 7 months</small>
+                                <small class="text-muted ms-3"><i class="fas fa-users me-1"></i> Team of 5</small>
+                            </div>
+                            
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="#" class="btn btn-primary">View Details</a>
+                                <a href="#" class="text-muted"><i class="fas fa-external-link-alt"></i> App Store</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="card project-card shadow-sm">
-                    <!-- <img src="project2.jpg" class="card-img-top" alt="E-commerce Website"> -->
-                    <div class="card-body">
-                        <h3 class="card-title">E-commerce Website</h3>
-                        <p class="card-text">Responsive e-commerce site using React and Node.js with secure payment integration.</p>
-                        <p><strong>Technologies:</strong> React, Node.js, MongoDB, Stripe</p>
-                        <p><strong>Duration:</strong> 4 months</p>
-                        <a href="#" class="btn btn-primary">View Details</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card project-card shadow-sm">
-                    <img src="project3.jpg" class="card-img-top" alt="Cloud Migration Project">
-                    <div class="card-body">
-                        <h3 class="card-title">Cloud Migration Project</h3>
-                        <p class="card-text">Led migration of on-premise infrastructure to AWS, improving scalability and reducing costs.</p>
-                        <p><strong>Technologies:</strong> AWS EC2, S3, RDS, Docker</p>
-                        <p><strong>Duration:</strong> 8 months</p>
-                        <a href="#" class="btn btn-primary">View Details</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card project-card shadow-sm">
-                    <img src="project4.jpg" class="card-img-top" alt="IoT Home Automation System">
-                    <div class="card-body">
-                        <h3 class="card-title">IoT Home Automation System</h3>
-                        <p class="card-text">Smart home system using Raspberry Pi and IoT sensors, controlled via mobile app.</p>
-                        <p><strong>Technologies:</strong> Raspberry Pi, Python, MQTT, React Native</p>
-                        <p><strong>Duration:</strong> 3 months</p>
-                        <a href="#" class="btn btn-primary">View Details</a>
-                    </div>
-                </div>
+            
+            <div class="text-center mt-5">
+                <a href="#" class="btn btn-outline-primary btn-lg px-5 py-2">
+                    <i class="fas fa-book-open me-2"></i>View All Projects
+                </a>
             </div>
         </div>
-        <div class="text-center mt-4">
-            <a href="#" class="btn btn-outline-primary btn-lg">View All Projects</a>
-        </div>
-    </main>
+    </section>
 
-    <footer class="bg-dark text-white text-center py-3 mt-5">
-        <p class="mb-0">&copy; Gideon's Portfolio. All rights reserved.</p>
+    <footer class="bg-dark text-white py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2023 Gideon's Portfolio. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="#" class="text-white me-3"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/Gideon-Kipngeno" class="text-white me-3"><i class="fab fa-github"></i></a>
+                    <a href="https://x.com/Gideon_K_N" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="text-white"><i class="fab fa-facebook-f"></i></a>
+                </div>
+            </div>
+        </div>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-       document.addEventListener('DOMContentLoaded', () => {
-            const header = document.querySelector('.header');
-            header.style.backgroundColor = '#f8f9fa'; // Change background color
-            header.style.padding = '20px'; // Add padding
-
-            // Example: Change the font size of the heading on hover
-            const heading = document.querySelector('h1');
-            heading.addEventListener('mouseover', () => {
-                heading.style.fontSize = '3em';
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
             });
-            heading.addEventListener('mouseout', () => {
-                heading.style.fontSize = '2em';
         });
-});
-</script>
+
+        // Animation for project cards on scroll
+        const projectCards = document.querySelectorAll('.project-card');
+        
+        const animateOnScroll = () => {
+            projectCards.forEach(card => {
+                const cardPosition = card.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+                
+                if(cardPosition < screenPosition) {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }
+            });
+        };
+
+        // Set initial state
+        projectCards.forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'all 0.6s ease';
+        });
+
+        // Add event listener
+        window.addEventListener('scroll', animateOnScroll);
+        // Trigger once on page load
+        window.addEventListener('load', animateOnScroll);
+    </script>
 </body>
 </html>

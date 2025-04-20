@@ -1,197 +1,655 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - Gideon K. Ngetich</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="css/custom.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <style>
+    :root {
+      --primary-color: #0dcaf0;
+      --secondary-color: #0b5ed7;
+      --accent-color: #ffd700;
+      --dark-color: #212529;
+      --light-color: #f8f9fa;
+    }
+    
+    body {
+      background-color: var(--light-color);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+    }
+    
+    /* Navbar styles */
+    .navbar {
+      background-color: rgba(33, 37, 41, 0.98);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+      padding: 0.8rem 0;
+    }
+    .navbar-brand {
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      font-size: 1.25rem;
+    }
+    .navbar-nav .nav-link {
+      position: relative;
+      transition: color 0.3s ease;
+      font-weight: 500;
+      margin: 0 0.75rem;
+      padding: 0.5rem 0;
+      font-size: 1rem;
+    }
+    .navbar-nav .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 3px;
+      bottom: 0;
+      left: 0;
+      background-color: var(--accent-color);
+      transition: width 0.3s ease;
+    }
+    .navbar-nav .nav-link:hover::after,
+    .navbar-nav .nav-link.active::after {
+      width: 100%;
+    }
+    
+    /* Hero section styles */
+    .hero-section {
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+      color: white;
+      padding: 7rem 0 6rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+      margin-bottom: 3rem;
+    }
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+      opacity: 0.08;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    .hero-section h1 {
+      font-weight: 800;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.5px;
+      font-size: 2.75rem;
+    }
+    .hero-section .lead {
+      font-size: 1.4rem;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 3rem;
+      opacity: 0.9;
+    }
+    .contact-method {
+      background-color: rgba(255,255,255,0.15);
+      border-radius: 12px;
+      padding: 2.5rem 1.5rem;
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+      height: 100%;
+      border: 1px solid rgba(255,255,255,0.2);
+      backdrop-filter: blur(5px);
+    }
+    .contact-method:hover {
+      background-color: rgba(255,255,255,0.25);
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+    }
+    .contact-method i {
+      font-size: 2.75rem;
+      margin-bottom: 1.5rem;
+      color: white;
+    }
+    .contact-method h5 {
+      font-weight: 600;
+      margin-bottom: 0.75rem;
+      font-size: 1.25rem;
+    }
+    .contact-method a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    .contact-method a:hover {
+      color: var(--accent-color);
+      text-decoration: underline;
+    }
+    .btn-hero {
+      background-color: white;
+      color: var(--secondary-color);
+      font-weight: 600;
+      padding: 1rem 3rem;
+      border-radius: 50px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+      transition: all 0.3s ease;
+      border: none;
+      font-size: 1.15rem;
+      margin-top: 1.5rem;
+      letter-spacing: 0.5px;
+    }
+    .btn-hero:hover {
+      transform: translateY(-5px) scale(1.03);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+      color: var(--secondary-color);
+    }
+    
+    /* Main content styles */
+    .card {
+      border-radius: 14px;
+      overflow: hidden;
+      border: none;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+      margin-bottom: 2rem;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    }
+    .form-control {
+      padding: 0.8rem 1rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: 1px solid #dee2e6;
+    }
+    .form-control:focus {
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 0.25rem rgba(13, 202, 240, 0.25);
+    }
+    .btn-primary {
+      background-color: var(--primary-color);
+      border-color: var(--primary-color);
+      font-weight: 500;
+      padding: 0.8rem 2rem;
+      border-radius: 8px;
+      font-size: 1.05rem;
+      letter-spacing: 0.5px;
+    }
+    .btn-primary:hover {
+      background-color: #0bb6d9;
+      border-color: #0bb6d9;
+      transform: translateY(-2px);
+    }
+    .accordion {
+      --bs-accordion-border-color: rgba(0,0,0,0.05);
+      --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgba(13, 202, 240, 0.25);
+    }
+    .accordion-button {
+      font-weight: 500;
+      padding: 1.25rem 1.5rem;
+      border-radius: 8px !important;
+    }
+    .accordion-button:not(.collapsed) {
+      background-color: rgba(13, 202, 240, 0.1);
+      color: var(--primary-color);
+      box-shadow: none;
+    }
+    .accordion-body {
+      padding: 1.25rem 1.5rem;
+    }
+    
+    /* Footer styles */
+    footer {
+      background-color: var(--dark-color);
+      color: white;
+      padding: 5rem 0 2.5rem;
+      margin-top: 6rem;
+      clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
+      position: relative;
+    }
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    }
+    footer h5 {
+      font-weight: 600;
+      margin-bottom: 1.75rem;
+      position: relative;
+      display: inline-block;
+      font-size: 1.25rem;
+    }
+    footer h5::after {
+      content: '';
+      position: absolute;
+      width: 50px;
+      height: 3px;
+      bottom: -10px;
+      left: 0;
+      background-color: var(--primary-color);
+    }
+    footer a {
+      color: rgba(255,255,255,0.7);
+      text-decoration: none;
+      transition: all 0.3s ease;
+      display: inline-block;
+      margin-bottom: 0.75rem;
+      font-size: 0.95rem;
+    }
+    footer a:hover {
+      color: white;
+      transform: translateX(8px);
+    }
+    .social-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 42px;
+      height: 42px;
+      background-color: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      text-align: center;
+      margin-right: 12px;
+      transition: all 0.3s ease;
+    }
+    .social-links a:hover {
+      background-color: var(--primary-color);
+      color: white !important;
+      transform: translateY(-5px) scale(1.1);
+    }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 1.5rem;
+      margin-top: 3rem;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 992px) {
+      .hero-section {
+        padding: 5rem 0 4rem;
+      }
+      .hero-section h1 {
+        font-size: 2.25rem;
+      }
+      .hero-section .lead {
+        font-size: 1.2rem;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .hero-section {
+        clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+        padding: 4rem 0 3rem;
+      }
+      .hero-section h1 {
+        font-size: 2rem;
+      }
+      .contact-method {
+        padding: 1.75rem 1rem;
+      }
+      .contact-method i {
+        font-size: 2.25rem;
+        margin-bottom: 1rem;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .hero-section {
+        padding: 3.5rem 0 2.5rem;
+      }
+      .hero-section h1 {
+        font-size: 1.75rem;
+      }
+      .hero-section .lead {
+        font-size: 1.1rem;
+      }
+      .btn-hero {
+        padding: 0.8rem 2rem;
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-blue bg-info sticky-top">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">Gideon's Digital Resume</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
-                    </li>
-                <!--<li class="nav-item">
-                        <a class="nav-link" href="#project.html">Project</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#blog.html">Blog</a>
-                    </li> -->
-                    <li class="nav-item">
-                        <a class="nav-link active" href="contact.html">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <i></i>Gideon's Portfolio
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                  <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="about.html">About</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link active" href="contact.html">Contact</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#">Projects</a>
+              </li>
+          </ul>
+      </div>
+    </div>
+  </nav>
 
-    <header class="header-bg text-center py-4">
-        <div class="container">
-            <h1 class="display-5 fw-bold mb-2">Get in Touch</h1>
-            <p class="lead mb-3">Have a question or want to start a project? I'm here to help!</p>
-            <div class="row justify-content-center g-3">
-                <div class="col-md-4"><i class="fas fa-envelope fa-lg mb-1"></i><p class="mb-0"><a href="mailto:crystalechs@gmail.com" class="text-white">crystalechs@gmail.com</a></p></div>
-                <div class="col-md-4"><i class="fas fa-phone fa-lg mb-1"></i><p class="mb-0"><a href="tel:+254726550759" class="text-white">+ (254) 726 550 759</a></p></div>
-                <div class="col-md-4"><i class="fas fa-map-marker-alt fa-lg mb-1"></i><p class="mb-0">Nairobi, Kenya</p></div>
-            </div>
-            <a href="#contact-form" class="btn btn-light btn-lg mt-3">Send a Message</a>
+  <!-- Hero Header -->
+  <section class="hero-section">
+    <div class="container hero-content">
+      <h1 class="display-4 fw-bold">Let's Build Something Amazing</h1>
+      <p class="lead">Have a project in mind or want to discuss opportunities? I'd love to hear from you!</p>
+      <div class="row g-4 justify-content-center mb-5">
+        <div class="col-md-4">
+          <div class="contact-method text-center">
+            <i class="fas fa-envelope"></i>
+            <h5>Email Me</h5>
+            <p><a href="mailto:giddykipngeno5@gmail.com">giddykipngeno5@gmail.com</a></p>
+          </div>
         </div>
-    </header>
+        <div class="col-md-4">
+          <div class="contact-method text-center">
+            <i class="fas fa-phone-alt"></i>
+            <h5>Call Me</h5>
+            <p><a href="tel:+254726550759">+254 726 550 759</a></p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="contact-method text-center">
+            <i class="fas fa-map-marker-alt"></i>
+            <h5>My Location</h5>
+            <p>Nairobi, Kenya</p>
+          </div>
+        </div>
+      </div>
+      <a href="#contact-form" class="btn btn-hero">
+        <i class="fas fa-paper-plane me-2"></i>Send a Message
+      </a>
+    </div>
+  </section>
 
-    <main class="container my-4">
-        <div class="row g-4">
-            <!-- Left column: Contact form and FAQ -->
-            <div class="col-lg-7">
-                <div class="contact-form bg-white rounded shadow-sm p-4 mb-4">
-                <!-- Contact form -->
-                    <h2 class="mb-4">Send a Message</h2>
-                    <form>
-                        <div class="mb-3">
-                            <label for="name" class="form-label">Name</label>
-                            <input type="text" class="form-control" id="name" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="message" class="form-label">Message</label>
-                            <textarea class="form-control" id="message" rows="5" required></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
-                    </form>
-                </div>
-                
-                <!-- FAQ section -->
-                <div class="faq bg-white rounded shadow-sm p-4">
-                    <h2 class="mb-4">Frequently Asked Questions</h2>
-                    <div class="accordion" id="faqAccordion">
-                        <div class="accordion-item">
-                            <h3 class="accordion-header" id="headingOne">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    What services do you offer?
-                                </button>
-                            </h3>
-                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    We offer a wide range of IT services including web development, network security, and IT consulting.
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Add more FAQ items as needed -->
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Right column: Contact info and map -->
-            <div class="col-lg-5">
-                <div class="contact-info bg-info text-white rounded shadow-sm p-4 mb-4">
-                    <!-- Contact information -->
-                    <h2 class="mb-4">Contact Information</h2>
-                    <p><i class="fas fa-envelope me-2"></i> crystalechs@gmail.com</p>
-                    <p><i class="fas fa-phone me-2"></i> + (254) 726 550 759</p>
-                    <p><i class="fas fa-map-marker-alt me-2"></i> Nairobi, Kenya</p>
-                    <hr>
-                    <h3 class="mb-3">Connect with me</h3>
-                    <div class="social-links">
-                        <a href="#" class="text-white me-3"><i class="fab fa-linkedin fa-2x"></i></a>
-                        <a href="#" class="text-white me-3"><i class="fab fa-github fa-2x"></i></a>
-                        <a href="#" class="text-white me-3"><i class="fab fa-twitter fa-2x"></i></a>
-                    </div>
-                    <div class="business-hours mt-4">
-                        <h3 class="mb-3">Business Hours</h3>
-                        <p><i class="fas fa-clock me-2"></i> Monday - Friday: 9:00 AM - 5:00 PM</p>
-                        <p><i class="fas fa-clock me-2"></i> Saturday: 10:00 AM - 2:00 PM</p>
-                        <p><i class="fas fa-clock me-2"></i> Sunday: Closed</p>
-                    </div>
-                </div>
-                
-                <!-- Map -->
-                <div class="map bg-white rounded shadow-sm p-4">
-                    <h3 class="mb-3">Our Location</h3>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d255281.19891733283!2d36.70730832917721!3d-1.3031933614782118!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1172d84d49a7%3A0xf7cf0254b297924c!2sNairobi%2C%20Kenya!5e0!3m2!1sen!2s!4v1692183437200!5m2!1sen!2s" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div>
-            </div>
+  <!-- Main Content -->
+  <main class="container my-5">
+    <div class="row g-4">
+      <!-- Contact Form -->
+      <div class="col-lg-7">
+        <div class="card shadow-sm" id="contact-form">
+          <div class="card-body p-4 p-lg-5">
+            <h2 class="mb-4">Send Me a Message</h2>
+            <form>
+              <div class="mb-4">
+                <label for="name" class="form-label">Your Name</label>
+                <input type="text" class="form-control form-control-lg" id="name" placeholder="Enter your name" required>
+              </div>
+              <div class="mb-4">
+                <label for="email" class="form-label">Email Address</label>
+                <input type="email" class="form-control form-control-lg" id="email" placeholder="Enter your email" required>
+              </div>
+              <div class="mb-4">
+                <label for="subject" class="form-label">Subject</label>
+                <input type="text" class="form-control form-control-lg" id="subject" placeholder="What's this about?">
+              </div>
+              <div class="mb-4">
+                <label for="message" class="form-label">Your Message</label>
+                <textarea class="form-control form-control-lg" id="message" rows="6" placeholder="Tell me about your project..." required></textarea>
+              </div>
+              <div class="d-grid">
+                <button type="submit" class="btn btn-primary btn-lg py-2">
+                  <i class="fas fa-paper-plane me-2"></i>Send Message
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
-        
-        <!-- CTA section -->
-        <div class="cta-section text-center mt-4 bg-white p-4 rounded shadow-sm">
-            <h2>Ready to get started?</h2>
-            <p>Let's discuss your project and see how we can help you achieve your goals.</p>
-            <a href="#" class="btn btn-primary btn-lg">Schedule a Consultation</a>
-        </div>
-    </main>
 
-    <footer class="footer py-5">
-        <div class="container">
-            <div class="row gy-4">
-                <div class="col-lg-4 col-md-6">
-                    <h5 class="text-white mb-3">Gideon K. Ngetich</h5>
-                    <div class="mb-2">
-                        <a href="#" class="small text-muted me-2">Terms of Service</a>
-                        <a href="#" class="small text-muted">Privacy Policy</a>
-                    </div>
-                    <p class="small text-white mb-0">IT Professional | Web Developer | Network Security Specialist</p>
-                </div>
-                <div class="col-lg-2 col-md-6">
-                    <h5 class="text-white mb-3">Quick Links</h5>
-                    <ul class="list-unstyled text-muted">
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#portfolio">Portfolio</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#articles">Blog</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+        <!-- FAQs -->
+        <div class="card shadow-sm mt-4">
+          <div class="card-body p-4 p-lg-5">
+            <h2 class="mb-4">Frequently Asked Questions</h2>
+            <div class="accordion" id="faqAccordion">
+              <!-- FAQ 1 -->
+              <div class="accordion-item border-0 mb-3">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                    <i class="fas fa-question-circle text-primary me-2"></i> What services do you offer?
+                  </button>
+                </h3>
+                <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    <p>I specialize in full-stack web development, network security solutions, and IT consulting. My services include:</p>
+                    <ul>
+                      <li>Custom website and web application development</li>
+                      <li>Responsive front-end design and development</li>
+                      <li>Back-end systems and API development</li>
+                      <li>Cybersecurity assessments and implementations</li>
+                      <li>Network infrastructure design and optimization</li>
+                      <li>Ongoing technical support and maintenance</li>
                     </ul>
+                    <p class="mb-0">I work with both individuals and businesses to create tailored solutions that meet their specific needs.</p>
+                  </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <h5 class="text-white mb-3">Connect</h5>
-                    <div class="social-links">
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="https://x.com/Gideon_K_N" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="mailto:your.email@example.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                        <a href="https://your-portfolio-site.com" aria-label="Portfolio"><i class="fas fa-globe"></i></a>
-                        <a href="https://stackoverflow.com/users/your-user-id" aria-label="Stack Overflow"><i class="fab fa-stack-overflow"></i></a>
-                    </div>
+              </div>
+              <!-- FAQ 2 -->
+              <div class="accordion-item border-0 mb-3">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                    <i class="fas fa-clock text-primary me-2"></i> What are your response times?
+                  </button>
+                </h3>
+                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    <p>I understand the importance of timely communication and strive to respond to all inquiries promptly:</p>
+                    <ul>
+                      <li><strong>Standard inquiries:</strong> Within 24 hours on business days (Monday-Friday)</li>
+                      <li><strong>Weekend inquiries:</strong> By the following Monday</li>
+                      <li><strong>Urgent matters:</strong> Please include "URGENT" in your email subject line or call directly for fastest response</li>
+                    </ul>
+                    <p class="mb-0">During particularly busy periods, response times may be slightly longer, but I will always acknowledge receipt of your message.</p>
+                  </div>
                 </div>
-                <div class="col-lg-2 col-md-6">
-                    <h5 class="text-white mb-3">Newsletter</h5>
-                    <form>
-                        <div class="input-group mb-3">
-                            <input type="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="button-addon2">
-                            <button class="btn btn-primary" type="button" id="button-addon2">Subscribe</button>
-                        </div>
-                    </form>
+              </div>
+              <!-- FAQ 3 -->
+              <div class="accordion-item border-0">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed rounded-3" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                    <i class="fas fa-laptop-house text-primary me-2"></i> Do you work remotely or on-site?
+                  </button>
+                </h3>
+                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    <p>I'm comfortable working in both remote and on-site environments, depending on your needs:</p>
+                    <ul>
+                      <li><strong>Nairobi clients:</strong> Available for in-person meetings when necessary</li>
+                      <li><strong>Remote work:</strong> Fully equipped for remote collaboration using tools like Zoom, Slack, GitHub, and Trello</li>
+                      <li><strong>Travel:</strong> Available for key project milestones or implementations if required</li>
+                      <li><strong>Time zones:</strong> Flexible to accommodate clients in different time zones</li>
+                    </ul>
+                    <p class="mb-0">My remote setup includes high-speed internet, professional-grade equipment, and secure communication channels to ensure seamless collaboration.</p>
+                  </div>
                 </div>
+              </div>
             </div>
-            <div class="row mt-4">
-                <div class="col-12">
-                    <hr class="bg-secondary">
-                    <p class="small text-white text-center mb-0">
-                        &copy; Gideon K. Ngetich. All rights reserved | Designed by Gideon
-                    </p>
-                </div>
-            </div>
+          </div>
         </div>
-    </footer>
+      </div>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+      <!-- Contact Info + Map -->
+      <div class="col-lg-5">
+        <div class="card bg-primary text-white shadow-sm">
+          <div class="card-body p-4 p-lg-5">
+            <h2 class="mb-4">Contact Information</h2>
+            <ul class="list-unstyled">
+              <li class="mb-4 d-flex align-items-start">
+                <i class="fas fa-envelope mt-1 me-3"></i>
+                <div>
+                  <h5 class="mb-1">Email</h5>
+                  <a href="mailto:giddykipngeno5@gmail.com" class="text-white">giddykipngeno5@gmail.com</a>
+                </div>
+              </li>
+              <li class="mb-4 d-flex align-items-start">
+                <i class="fas fa-phone-alt mt-1 me-3"></i>
+                <div>
+                  <h5 class="mb-1">Phone</h5>
+                  <a href="tel:+254726550759" class="text-white">+254 726 550 759</a>
+                </div>
+              </li>
+              <li class="mb-4 d-flex align-items-start">
+                <i class="fas fa-map-marker-alt mt-1 me-3"></i>
+                <div>
+                  <h5 class="mb-1">Location</h5>
+                  <p>Nairobi, Kenya</p>
+                </div>
+              </li>
+            </ul>
+            <hr class="bg-light opacity-25 my-4" />
+            <h3 class="mb-3">Connect With Me</h3>
+            <div class="social-links mb-4">
+              <a href="#" class="text-white me-2" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://github.com/Gideon-Kipngeno" class="text-white me-2" title="GitHub"><i class="fab fa-github"></i></a>
+              <a href="https://x.com/Gideon_K_N" class="text-white me-2" title="Twitter"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="text-white me-2" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="text-white" title="Instagram"><i class="fab fa-instagram"></i></a>
+            </div>
+            <h3 class="mb-3">Business Hours</h3>
+            <ul class="list-unstyled">
+              <li class="mb-2 d-flex">
+                <i class="fas fa-clock me-3 mt-1"></i>
+                <div>Mon-Fri: 9:00 AM - 5:00 PM</div>
+              </li>
+              <li class="mb-2 d-flex">
+                <i class="fas fa-clock me-3 mt-1"></i>
+                <div>Sat: 10:00 AM - 2:00 PM</div>
+              </li>
+              <li class="d-flex">
+                <i class="fas fa-clock me-3 mt-1"></i>
+                <div>Sun: Closed</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Map -->
+        <div class="card shadow-sm mt-4">
+          <div class="card-body p-4">
+            <h3 class="mb-3">My Location</h3>
+            <div class="ratio ratio-16x9 rounded-3 overflow-hidden">
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d255281.19891733283!2d36.70730832917721!3d-1.3031933614782118!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f1172d84d49a7%3A0xf7cf0254b297924c!2sNairobi%2C%20Kenya!5e0!3m2!1sen!2s!4v1692183437200!5m2!1sen!2s"
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+            <div class="mt-3">
+              <a href="https://maps.google.com/maps?q=Nairobi,+Kenya" class="btn btn-outline-primary btn-sm" target="_blank">
+                <i class="fas fa-map-marked-alt me-1"></i>Open in Maps
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA Section -->
+    <div class="card shadow-lg mt-5 text-center border-0 bg-light">
+      <div class="card-body py-5 px-4">
+        <h2 class="display-6 mb-3">Ready to Start Your Project?</h2>
+        <p class="lead mb-4">Let's discuss how I can help bring your ideas to life with custom digital solutions.</p>
+        <div class="d-flex justify-content-center gap-3 flex-wrap">
+          <a href="mailto:giddykipngeno5@gmail.com" class="btn btn-primary btn-lg px-4">
+            <i class="fas fa-envelope me-2"></i>Email Me
+          </a>
+          <a href="tel:+254726550759" class="btn btn-outline-primary btn-lg px-4">
+            <i class="fas fa-phone-alt me-2"></i>Call Now
+          </a>
+          <a href="#contact-form" class="btn btn-secondary btn-lg px-4">
+            <i class="fas fa-comment-alt me-2"></i>Message Form
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row gy-5">
+        <div class="col-lg-4">
+          <h5><i></i>Gideon K. Ngetich</h5>
+          <p class="mt-3 mb-4">IT Professional specializing in web development and network security solutions, dedicated to building secure, scalable digital experiences that drive business growth.</p>
+          <div class="social-links">
+            <a href="#" class="text-white me-2" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://github.com/Gideon-Kipngeno" class="text-white me-2" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="https://x.com/Gideon_K_N" class="text-white me-2" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-white me-2" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-white" title="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2">
+          <h5>Quick Links</h5>
+          <ul class="list-unstyled mt-3">
+            <li class="mb-2"><a href="index.html"><i class="fas fa-chevron-right me-2"></i>Home</a></li>
+            <li class="mb-2"><a href="about.html"><i class="fas fa-chevron-right me-2"></i>About</a></li>
+            <li class="mb-2"><a href="contact.html"><i class="fas fa-chevron-right me-2"></i>Contact</a></li>
+            <li class="mb-2"><a href="#"><i class="fas fa-chevron-right me-2"></i>Projects</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right me-2"></i>Blog</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3">
+          <h5>Services</h5>
+          <ul class="list-unstyled mt-3">
+            <li class="mb-2"><a href="#"><i class="fas fa-chevron-right me-2"></i>Web Development</a></li>
+            <li class="mb-2"><a href="#"><i class="fas fa-chevron-right me-2"></i>Network Security</a></li>
+            <li class="mb-2"><a href="#"><i class="fas fa-chevron-right me-2"></i>IT Consulting</a></li>
+            <li class="mb-2"><a href="#"><i class="fas fa-chevron-right me-2"></i>Technical Support</a></li>
+            <li><a href="#"><i class="fas fa-chevron-right me-2"></i>Training</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3">
+          <h5>Contact Info</h5>
+          <ul class="list-unstyled mt-3">
+            <li class="mb-3 d-flex align-items-start">
+              <i class="fas fa-envelope mt-1 me-2"></i>
+              <a href="mailto:giddykipngeno5@gmail.com">giddykipngeno5@gmail.com</a>
+            </li>
+            <li class="mb-3 d-flex align-items-start">
+              <i class="fas fa-phone-alt mt-1 me-2"></i>
+              <a href="tel:+254726550759">+254 726 550 759</a>
+            </li>
+            <li class="d-flex align-items-start">
+              <i class="fas fa-map-marker-alt mt-1 me-2"></i>
+              <span>Nairobi, Kenya</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="row">
+          <div class="col-md-6">
+            <p class="mb-0">&copy; 2025 Gideon K. Ngetich. All rights reserved.</p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <p class="mb-0">Designed with <i class="fas fa-heart text-danger"></i> by Gideon</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
