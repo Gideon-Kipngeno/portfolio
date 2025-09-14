@@ -4,535 +4,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Gideon K. Ngetich — IT Professional specializing in web development, network security, and data analysis. Explore portfolio, experience, and services.">
-    <meta name="author" content="Gideon K. Ngetich">
-    <title>Gideon K. Ngetich - IT Professional</title>
-    <meta property="og:title" content="Gideon K. Ngetich - IT Professional">
-    <meta property="og:description" content="Web/System development, network security, and IT services. View projects, skills, and experience.">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="banner.jpg">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="theme-color" content="#1a1e21">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/custom.css">
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Gideon K. Ngetich",
-      "jobTitle": "IT Professional",
-      "url": "",
-      "sameAs": [
-        "https://github.com/Gideon-Kipngeno",
-        "https://x.com/Gideon_K_N"
-      ]
-    }
-    </script>
+    <meta name="description" content="Portfolio of Gideon K. Ngetich — IT Professional, Web Developer, and Network Security Specialist.">
+    <title>Gideon K. Ngetich — Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/site.css">
 </head>
 
 <body>
     <a class="skip-link" href="#main">Skip to main content</a>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-blue navbar-dark sticky-top" role="navigation" aria-label="Primary">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">Gideon's Digital Resume</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container-wide">
+            <a class="navbar-brand fw-semibold text-white" href="index.html">Gideon</a>
+            <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#nav"
+                aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="collapse navbar-collapse" id="nav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="project.html">Project</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="blog.html">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="project.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <section>
-        <img class="hero" src="banner.jpg" alt="Abstract technology banner" width="99%" height="200vh" fetchpriority="high" decoding="async">
-    </section>
-
-    <div class="container-fluid">
-        <div class="row">
-            <!-- Sidebar -->
-            <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block sidebar">
-                <div class="card">
-                    <div class="card-body">
-                        <ul class="nav flex-column">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#about">About</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#skills">Skills</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#portfolio">Portfolio</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#experience">Experience</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#services">Services</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#articles">Latest Articles</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-
-            <main id="main" class="col-md-9 ms-sm-auto col-lg-10 px-md-4 main-content">
-                <!-- About Section -->
-                <section id="about" class="my-5 py-4">
-                    <div class="card main-card">
-                        <div class="card-body">
-                            <h2 class="section-title text-center">About Me</h2>
-                            <p class="mb-0 text-end" id="currentDate"></p>
-                            <div class="decorative-line"></div>
-                            <div class="row mb-4">
-                                <div class="col-md-6 mb-4 mb-md-0">
-                                    <div class="card info-card shadow-sm h-100">
-                                        <div class="card-body">
-                                            <h3 class="card-title">Who is Gideon?</h3>
-                                            <p class="card-text">Gideon is a holder of BSc in Information Technology, professional with a passion for web/system development and network security. My journey in the tech world began at Zetech University, where I pursued a Bachelor of Science in Information Technology.</p>
-                                            <p>With 2 years of experience in the industry, Aspiring Data Analyst, I've had the opportunity to work on a variety of projects, from developing user-friendly web applications to implementing robust network solutions. I thrive on challenges and am always eager to expand my skill set to stay at the forefront of technological advancements.</p>
-                                        </div>  
-                                        <div>
-                                            <p><a href="Project/resume.html">My Resume</a> | <a href="https://github.com/Gideon-Kipngeno">My GitHub</a></p>
-                                            <p>Email: <a href="mailto:giddykipngeno5@gmail.com">giddykipngeno5@gmail.com</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="card photo-card shadow-sm h-100">
-                                        <div class="card-body">
-                                            <img src="Gideon Ngetich.png" alt="Portrait of Gideon K. Ngetich" class="img-fluid rounded" loading="lazy" decoding="async">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="mission-statement mt-4">
-                                <h3 class="text-center mb-3">My Mission</h3>
-                                <blockquote class="blockquote text-center">
-                                    <p class="mb-0"><em>"My mission is to leverage technology in solving complex problems and driving innovation in the IT industry."</em></p>
-                                </blockquote>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                
-                <!-- Skills Section -->
-                <section id="skills" class="mb-5">
-                    <h2 class="section-title text-center">My Skills</h2>
-                    <div class="decorative-line"></div>
-                    <div class="row">
-                        <!-- Technical Skills -->
-                        <div class="col-md-6 mb-4">
-                            <h3 class="text-center mb-4"><i class="fas fa-code section-icon"></i>Technical Skills</h3>
-                            <div class="skill-item mb-3">
-                                <div class="d-flex justify-content-between">
-                                    <span>HTML</span>
-                                    <span>90%</span>
-                                </div>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" style="width: 90%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item mb-3">
-                                <div class="d-flex justify-content-between">
-                                    <span>CSS</span>
-                                    <span>85%</span>
-                                </div>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" style="width: 85%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item mb-3">
-                                <div class="d-flex justify-content-between">
-                                    <span>JavaScript</span>
-                                    <span>75%</span>
-                                </div>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" style="width: 75%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item mb-3">
-                                <div class="d-flex justify-content-between">
-                                    <span>Python</span>
-                                    <span>80%</span>
-                                </div>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" style="width: 80%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item mb-3">
-                                <div class="d-flex justify-content-between">
-                                    <span>Network Security</span>
-                                    <span>70%</span>
-                                </div>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" style="width: 70%"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 mb-4">
-                            <h3 class="text-center mb-4"><i class="fas fa-users section-icon"></i>Soft Skills</h3>
-                            <div class="skill-item mb-3">
-                                <div class="d-flex justify-content-between">
-                                    <span>Problem Solving</span>
-                                    <span>95%</span>
-                                </div>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" style="width: 95%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item mb-3">
-                                <div class="d-flex justify-content-between">
-                                    <span>Communication</span>
-                                    <span>85%</span>
-                                </div>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" style="width: 85%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item mb-3">
-                                <div class="d-flex justify-content-between">
-                                    <span>Teamwork</span>
-                                    <span>90%</span>
-                                </div>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" style="width: 90%"></div>
-                                </div>
-                            </div>
-                            <div class="skill-item mb-3">
-                                <div class="d-flex justify-content-between">
-                                    <span>Adaptability</span>
-                                    <span>80%</span>
-                                </div>
-                                <div class="skill-progress">
-                                    <div class="skill-progress-bar" style="width: 80%"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                
-                <!-- Portfolio Section -->
-                <section id="portfolio" class="mb-5">
-                    <h2 class="section-title text-center">Portfolio Highlights</h2>
-                    <div class="decorative-line"></div>
-                    <div class="row row-cols-1 row-cols-md-3 g-4">
-                        <div class="col d-flex">
-                            <div class="card flex-fill">
-                                <img src="Appraisal.jpg" class="card-img-top" alt="Staff Appraisal System screenshot" loading="lazy" decoding="async">
-                                <div class="card-body">
-                                    <h5 class="card-title">Staff Appraisal System</h5>
-                                    <p class="card-text">The University Staff Appraisal System is a comprehensive platform designed to streamline various aspects of staff and student interactions within the university.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col d-flex">
-                            <div class="card flex-fill">
-                                <img src="Website.jpg" class="card-img-top" alt="Portfolio website screenshot" loading="lazy" decoding="async">
-                                <div class="card-body">
-                                    <h5 class="card-title">Portfolio Website</h5>
-                                    <p class="card-text">This is an online platform designed to showcase my work, skills, and achievements. It serves as a digital resume and portfolio, allowing visitors to explore my professional background and creative projects.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col d-flex">
-                            <div class="card flex-fill">
-                                <img src="Website.jpg" class="card-img-top" alt="Portfolio website screenshot" loading="lazy" decoding="async">
-                                <div class="card-body">
-                                    <h5 class="card-title">Portfolio Website</h5>
-                                    <p class="card-text">This is an online platform designed to showcase my work, skills, and achievements. It serves as a digital resume and portfolio, allowing visitors to explore my professional background and creative projects.</p>
-                                </div>
-                            </div>
-                        </div> 
-                    </div>
-                    <div class="text-center mt-4">
-                        <a href="project.html" class="btn btn-primary btn-lg">View All Projects</a>
-                    </div>
-                </section>
-                
-                <!-- Experience and Technologies Section -->
-                <div class="row mb-5">
-                    <div class="col-md-7">
-                        <div class="card mb-4">
-                            <div class="card-body">
-                                <section id="experience">
-                                    <h2 class="section-title text-center">Experience Highlights</h2>
-                                    <div class="decorative-line"></div>
-                                    <div class="timeline">
-                                        <div class="timeline-item">
-                                            <div class="timeline-badge">
-                                                <i class="fas fa-briefcase"></i>
-                                            </div>
-                                            <div class="timeline-panel">
-                                                <h4>Internship (PDTP)</h4>
-                                                <p class="text-muted">ICT Authority | 2022 - 2023</p>
-                                            </div>
-                                        </div>
-                                        <div class="timeline-item">
-                                            <div class="timeline-badge">
-                                                <i class="fas fa-briefcase"></i>
-                                            </div>
-                                            <div class="timeline-panel">
-                                                <h4>ICT Intern (PSIP)</h4>
-                                                <p class="text-muted">Public Service Commission | April 2022 - December 2022</p>
-                                            </div>
-                                        </div>
-                                        <div class="timeline-item">
-                                            <div class="timeline-badge">
-                                                <i class="fas fa-briefcase"></i>
-                                            </div>
-                                            <div class="timeline-panel">
-                                                <h4>Attachment</h4>
-                                                <p class="text-muted">Kapkatet Sub-County Hospital | May 2019 - August 2019</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="text-center mt-4">
-                                        <a href="about.html#full-experience" class="btn btn-primary btn-lg">View Full Experience</a>
-                                    </div>
-                                </section>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-5">
-                        <div class="card">
-                            <div class="card-body">
-                                <section id="technologies">
-                                    <h2 class="section-title text-center">Technologies I Work With</h2>
-                                    <div class="decorative-line"></div>
-                                    <div class="row row-cols-3 row-cols-md-2 g-4">
-                                        <div class="col text-center">
-                                            <i class="fab fa-html5 fa-3x mb-2" style="color: #E34F26;"></i>
-                                            <p>HTML5</p>
-                                        </div>
-                                        <div class="col text-center">
-                                            <i class="fab fa-css3-alt fa-3x mb-2" style="color: #1572B6;"></i>
-                                            <p>CSS3</p>
-                                        </div>
-                                        <div class="col text-center">
-                                            <i class="fab fa-js-square fa-3x mb-2" style="color: #F7DF1E;"></i>
-                                            <p>JavaScript</p>
-                                        </div>
-                                        <div class="col text-center">
-                                            <i class="fab fa-python fa-3x mb-2" style="color: #3776AB;"></i>
-                                            <p>Python</p>
-                                        </div>
-                                    </div>
-                                </section>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Services Section -->
-                <section id="services" class="mb-5">
-                    <h2 class="section-title text-center">Services</h2>
-                    <div class="decorative-line"></div>
-                    <div class="row row-cols-1 row-cols-md-3 g-4">
-                        <div class="col d-flex">
-                            <div class="card flex-fill">
-                                <div class="card-body text-center">
-                                    <i class="fas fa-code fa-3x mb-4"></i>
-                                    <h5 class="card-title">Web Development</h5>
-                                    <p class="card-text">Building responsive and efficient websites tailored to your needs.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col d-flex">
-                            <div class="card flex-fill">
-                                <div class="card-body text-center">
-                                    <i class="fas fa-network-wired fa-3x mb-4"></i>
-                                    <h5 class="card-title">Network Security</h5>
-                                    <p class="card-text">Ensuring the security and integrity of your network systems.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col d-flex">
-                            <div class="card flex-fill">
-                                <div class="card-body text-center">
-                                    <i class="fas fa-cogs fa-3x mb-4"></i>
-                                    <h5 class="card-title">IT Consulting</h5>
-                                    <p class="card-text">Providing expert advice to optimize your IT infrastructure.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                
-                <!-- Articles Section -->
-                <section id="articles" class="mb-5">
-                    <h2 class="section-title text-center">Latest Articles</h2>
-                    <div class="decorative-line"></div>
-                    <div class="row row-cols-1 row-cols-md-3 g-4">
-                        <div class="col d-flex">
-                            <div class="card flex-fill">
-                                <div class="card-header p-0 text-center">
-                                    <i class="fas fa-shield-alt fa-5x mt-3 mb-3"></i>
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">The Future of Cybersecurity</h5>
-                                    <p class="card-text">
-                                        <small class="text-muted">
-                                            <i class="far fa-calendar-alt"></i> August 10, 2024
-                                            <i class="far fa-clock ml-2"></i> 5 min read
-                                        </small>
-                                    </p>
-                                    <p class="card-text">Explore the emerging trends in cybersecurity, including AI-driven threat detection, quantum encryption, and zero-trust architectures...</p> 
-                                </div>                               
-                            </div>
-                        </div>
-                        <div class="col d-flex">
-                            <div class="card flex-fill">
-                                <div class="card-header p-0 text-center">
-                                    <div class="device-icons mt-3 mb-3">
-                                        <i class="fas fa-mobile-alt fa-2x"></i>
-                                        <i class="fas fa-tablet-alt fa-3x mx-2"></i>
-                                        <i class="fas fa-laptop fa-4x"></i>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">Mastering Responsive Web Design</h5>
-                                    <p class="card-text">
-                                        <small class="text-muted">
-                                            <i class="far fa-calendar-alt"></i> August 10, 2024
-                                            <i class="far fa-clock ml-2"></i> 5 min read
-                                        </small>
-                                    </p>
-                                    <p class="card-text">Dive into the latest techniques for creating truly responsive websites. From CSS Grid to variable fonts, discover how to craft seamless user experiences across all devices....</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col d-flex">
-                            <div class="card flex-fill">
-                                <div class="card-header p-0 text-center">
-                                    <div class="edge-computing-icon mt-3 mb-3">
-                                        <i class="fas fa-cloud fa-4x"></i>
-                                        <div class="edge-nodes">
-                                            <i class="fas fa-laptop fa-2x"></i>
-                                            <i class="fas fa-mobile-alt fa-2x"></i>
-                                            <i class="fas fa-server fa-2x"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-body">
-                                    <h5 class="card-title">The Rise of Edge Computing</h5>
-                                    <p class="card-text">
-                                        <small class="text-muted">
-                                            <i class="far fa-calendar-alt"></i> August 10, 2024
-                                            <i class="far fa-clock ml-2"></i> 5 min read
-                                        </small>
-                                    </p>
-                                    <p class="card-text">Uncover the potential of edge computing and its impact on Internet of Things (IoT) applications...</p>
-                                </div>
-                            </div>
-                        </div>               
-                        <div class="text-center mt-4">
-                            <a href="blog.html" class="btn btn-primary btn-lg">View All Articles</a>
-                        </div> 
-                    </div>
-                </section>
-                    
-                <section class="mb-5 text-center">
-                    <h3 class="section-title">Let's Work Together</h3>
-                    <p class="lead">Interested in collaborating or have a project in mind?</p>
-                    <a href="contact.html" class="btn btn-primary btn-lg">Get in Touch</a>
-                </section>
-            </main>
+    <header class="hero">
+        <div class="container-narrow text-center text-md-start">
+            <span class="badge rounded-pill">IT Professional • Web Developer • Security</span>
+            <h1 class="display-4 hero-title mt-3">Building reliable, secure, and human-centered digital solutions</h1>
+            <p class="lead hero-subtitle mt-3">I design and build performant web apps, automate workflows with Python, and implement secure network solutions.</p>
+            <div class="hero-cta mt-4 d-flex gap-3 flex-wrap">
+                <a href="project.html" class="btn btn-primary"><i class="fa-solid fa-folder-open me-2"></i>Explore Projects</a>
+                <a href="mailto:giddykipngeno5@gmail.com" class="btn btn-outline-light border-card"><i class="fa-solid fa-envelope me-2"></i>Hire Me</a>
+            </div>
         </div>
-    </div>
+    </header>
 
-    <footer class="footer py-5">
-        <div class="container">
-            <div class="row gy-4">
-                <div class="col-lg-4 col-md-6">
-                    <h5 class="text-white mb-3">Gideon K. Ngetich</h5>
-                    <div class="mb-2">
-                        <a href="#" class="small text-muted me-2">Terms of Service</a>
-                        <a href="#" class="small text-muted">Privacy Policy</a>
-                    </div>
-                    <p class="small text-white mb-0">IT Professional | Web Developer | Network Security Specialist</p>
+    <main id="main">
+        <!-- Featured Projects -->
+        <section class="section">
+            <div class="container-narrow">
+                <div class="section-header text-center">
+                    <div class="section-kicker">Selected work</div>
+                    <h2 class="section-title h1 mt-2">Featured projects</h2>
+                    <p class="section-desc">A snapshot of systems and interfaces I recently shipped.</p>
                 </div>
-                <div class="col-lg-2 col-md-6">
-                    <h5 class="text-white mb-3">Quick Links</h5>
-                    <ul class="list-unstyled text-muted">
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#portfolio">Portfolio</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <h5 class="text-white mb-3">Connect</h5>
-                    <div class="social-links">
-                        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://github.com/Gideon-Kipngeno" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="https://x.com/Gideon_K_N" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-                        <a href="mailto:giddykipngeno5@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                        <a href="https://github.com/Gideon-Kipngeno" aria-label="Portfolio"><i class="fas fa-globe"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-md-6">
-                    <h5 class="text-white mb-3">Newsletter</h5>
-                    <form>
-                        <div class="input-group mb-3">
-                            <input type="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="button-addon2">
-                            <button class="btn btn-primary" type="button" id="button-addon2">Subscribe</button>
+
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card-elevated h-100 bg-card project-card p-3">
+                            <img src="Website.jpg" alt="Portfolio website UI preview" class="rounded mb-3" loading="lazy" decoding="async">
+                            <h3 class="h5 card-title">Personal Portfolio</h3>
+                            <p class="card-text">Responsive portfolio with accessible components, semantic HTML, and modern theming.</p>
+                            <div class="d-flex gap-2 flex-wrap mb-3">
+                                <span class="badge rounded-pill tech-badge">Bootstrap 5</span>
+                                <span class="badge rounded-pill tech-badge">Poppins</span>
+                                <span class="badge rounded-pill tech-badge">A11y</span>
+                            </div>
+                            <div class="d-flex gap-3">
+                                <a href="project.html" class="link-primary">Details</a>
+                                <a href="https://github.com/Gideon-Kipngeno" class="link-primary">Code</a>
+                            </div>
                         </div>
-                    </form>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card-elevated h-100 bg-card project-card p-3">
+                            <img src="Appraisal.jpg" alt="Staff appraisal dashboard preview" class="rounded mb-3" loading="lazy" decoding="async">
+                            <h3 class="h5 card-title">Staff Appraisal System</h3>
+                            <p class="card-text">End-to-end appraisal workflow with secure auth, forms, and analytics.</p>
+                            <div class="d-flex gap-2 flex-wrap mb-3">
+                                <span class="badge rounded-pill tech-badge">Python</span>
+                                <span class="badge rounded-pill tech-badge">PostgreSQL</span>
+                                <span class="badge rounded-pill tech-badge">Charts</span>
+                            </div>
+                            <div class="d-flex gap-3">
+                                <a href="project.html" class="link-primary">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card-elevated h-100 bg-card project-card p-3">
+                            <img src="banner.jpg" alt="Cloud migration illustration" class="rounded mb-3" loading="lazy" decoding="async">
+                            <h3 class="h5 card-title">Cloud & Networking</h3>
+                            <p class="card-text">Secure VPC design, IaC automation, and observability for scalable apps.</p>
+                            <div class="d-flex gap-2 flex-wrap mb-3">
+                                <span class="badge rounded-pill tech-badge">AWS</span>
+                                <span class="badge rounded-pill tech-badge">IaC</span>
+                                <span class="badge rounded-pill tech-badge">Security</span>
+                            </div>
+                            <div class="d-flex gap-3">
+                                <a href="project.html" class="link-primary">Details</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="row mt-4">
-                <div class="col-12">
-                    <hr class="bg-secondary">
-                    <p class="small text-white text-center mb-0">
-                        &copy; Gideon K. Ngetich. All rights reserved | Designed by Gideon
-                    </p>
+        </section>
+
+        <!-- Skills -->
+        <section class="section">
+            <div class="container-narrow">
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <div class="card-elevated bg-card p-4 h-100">
+                            <h2 class="h4 mb-3">Technical</h2>
+                            <div class="d-flex gap-2 flex-wrap">
+                                <span class="badge rounded-pill skill-tag">HTML5</span>
+                                <span class="badge rounded-pill skill-tag">CSS / Bootstrap</span>
+                                <span class="badge rounded-pill skill-tag">JavaScript</span>
+                                <span class="badge rounded-pill skill-tag">Python</span>
+                                <span class="badge rounded-pill skill-tag">Networking</span>
+                                <span class="badge rounded-pill skill-tag">Security</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card-elevated bg-card p-4 h-100">
+                            <h2 class="h4 mb-3">Soft Skills</h2>
+                            <div class="d-flex gap-2 flex-wrap">
+                                <span class="badge rounded-pill skill-tag">Problem Solving</span>
+                                <span class="badge rounded-pill skill-tag">Collaboration</span>
+                                <span class="badge rounded-pill skill-tag">Communication</span>
+                                <span class="badge rounded-pill skill-tag">Adaptability</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="section">
+            <div class="container-narrow text-center">
+                <div class="card-elevated bg-card p-5">
+                    <h2 class="h3">Have a project in mind?</h2>
+                    <p class="text-muted-2 mb-4">Let's build something performant and secure together.</p>
+                    <a href="contact.html" class="btn btn-primary btn-lg">Get in touch</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer py-5">
+        <div class="container-wide">
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6">
+                    <div class="text-muted-2">© <span id="y"></span> Gideon K. Ngetich</div>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <a class="me-3" href="https://github.com/Gideon-Kipngeno" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a class="me-3" href="https://x.com/Gideon_K_N" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+                    <a class="me-3" href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:giddykipngeno5@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Display current date
-        const date = new Date();
-        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-        const currentDate = date.toLocaleDateString(undefined, options);
-        document.getElementById('currentDate').textContent = currentDate;
-        
-        // Smooth scrolling for sidebar links
-        document.querySelectorAll('#sidebar .nav-link').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                let targetId = this.getAttribute('href');
-                document.querySelector(targetId).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
+        document.getElementById('y').textContent = new Date().getFullYear();
     </script>
 </body>
 </html>

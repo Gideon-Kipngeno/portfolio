@@ -3,369 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me - Gideon Kipngeno Ngetich</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/custom.css">
+    <title>About — Gideon K. Ngetich</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/site.css">
 </head>
 <body>
-    <!-- Navbar -->
     <a class="skip-link" href="#main">Skip to main content</a>
-    <nav class="navbar navbar-expand-lg navbar-blue navbar-dark sticky-top" role="navigation" aria-label="Primary">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">Gideon's Digital Resume</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container-wide">
+            <a class="navbar-brand fw-semibold text-white" href="index.html">Gideon</a>
+            <button class="navbar-toggler text-white" type="button" data-bs-toggle="collapse" data-bs-target="#nav"
+                aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
+            <div class="collapse navbar-collapse" id="nav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="about.html">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="project.html">Project</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="blog.html">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contact.html">Contact</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="project.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <header class="header-bg text-center py-5">
-        <div class="container">
-            <h1 class="display-4 fw-bold">About Me</h1>
-            <p class="lead">Innovating in IT | Securing Networks | Building the Web</p>
-        </div>
-    </header>
+    <main id="main">
+        <section class="hero">
+            <div class="container-narrow">
+                <h1 class="display-5 hero-title">Hi, I'm Gideon</h1>
+                <p class="lead hero-subtitle">I craft resilient web experiences and engineer secure networks. I enjoy turning complex problems into elegant, user-friendly solutions.</p>
+            </div>
+        </section>
 
-    <main id="main" class="container my-5">
-        <div class="row">
-            <!-- Profile and My Story section -->
-            <div class="col-lg-4">
-                <!-- Profile card -->
-                <div class="card shadow-sm mb-4">
-                    <div class="card-body text-center">
-                        <img src="Gideon Ngetich.png" alt="Gideon K. Ngetich" class="img-fluid rounded-circle profile-img mb-3">
-                        <h2 class="fw-bold">Gideon K. Ngetich</h2>
-                        <p class="text-muted">Network & Cloud Engineer</p>
-                        <div class="d-flex justify-content-center">
-                            <a href="#" class="text-dark me-3"><i class="fab fa-linkedin fa-2x"></i></a>
-                            <a href="https://github.com/Gideon-Kipngeno" class="text-dark me-3"><i class="fab fa-github fa-2x"></i></a>
-                            <a href="https://x.com/Gideon_K_N" class="text-dark"><i class="fab fa-twitter fa-2x"></i></a>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Languages section -->
-                <div class="card shadow-sm mb-4">
-                    <div class="card-body">
-                        <h3 class="section-title">Languages</h3>
-                        <ul class="list-unstyled">
-                            <li class="mb-2"><i class="fas fa-language me-2"></i> English - Fluent</li>
-                            <li class="mb-2"><i class="fas fa-language me-2"></i> Swahili - Fluent</li>
-                            <li class="mb-2"><i class="fas fa-language me-2"></i> Kipsigis - Native</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <!-- Skills section -->
-                <div class="card shadow-sm mb-4">
-                    <div class="card-body">
-                        <h3 class="section-title">Skills</h3>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <h5>Web Development</h5>
-                                <div class="progress mb-3">
-                                    <div class="progress-bar" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">85%</div>
-                                </div>
-                                <h5>Network Security</h5>
-                                <div class="progress mb-3">
-                                    <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">90%</div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <h5>Cloud Computing</h5>
-                                <div class="progress mb-3">
-                                    <div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
-                                </div>
-                                <h5>Database Management</h5>
-                                <div class="progress mb-3">
-                                    <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
+        <section class="section">
+            <div class="container-narrow">
+                <div class="row g-4 align-items-start">
+                    <div class="col-lg-5">
+                        <div class="card-elevated bg-card p-3 p-md-4">
+                            <img src="Gideon Ngetich.png" class="rounded w-100" alt="Portrait of Gideon K. Ngetich" loading="lazy" decoding="async">
+                            <div class="mt-3">
+                                <div class="d-flex gap-3 flex-wrap">
+                                    <a href="https://github.com/Gideon-Kipngeno" class="link-primary"><i class="fab fa-github me-1"></i>GitHub</a>
+                                    <a href="https://x.com/Gideon_K_N" class="link-primary"><i class="fab fa-x-twitter me-1"></i>Twitter</a>
+                                    <a href="#" class="link-primary"><i class="fab fa-linkedin me-1"></i>LinkedIn</a>
+                                    <a href="Project/resume.html" class="link-primary"><i class="fa-solid fa-file-lines me-1"></i>Resume</a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                
-                <!-- Certifications section -->
-                <div class="card shadow-sm">
-                    <div class="card-body">
-                        <h3 class="section-title">Certifications</h3>
-                        <ul class="list-unstyled">
-                            <li class="mb-2"><i class="fas fa-certificate me-2"></i> CISCO Network CCNA</li>
-                            <li class="mb-2"><i class="fas fa-certificate me-2"></i> Certified Information Systems Security Professional (CISSP)</li>
-                            <li class="mb-2"><i class="fas fa-certificate me-2"></i> AWS Certified Solutions Architect</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="col-lg-8">
-                <div class="card shadow-sm mb-4">
-                    <div class="card-body">
-                        <h3 class="section-title">My Story</h3>
-                        <p>I'm Gideon, an IT professional with a passion for web development and network security. My journey in the tech world began at Zetech University, where I pursued a Bachelor of Science in Information Technology. Since then, I've been on an exciting path of continuous learning and growth in the ever-evolving field of information technology.</p>
-                        <p>With 4 years of experience in the industry, I've had the opportunity to work on a variety of projects, from developing user-friendly web applications to implementing robust network solutions. I thrive on challenges and am always eager to expand my skill set to stay at the forefront of technological advancements.</p>
-                        <h4>Personal Journey</h4>
-                        <p>My fascination with technology started at a young age when I got my hands on my first computer. Growing up in Kericho, Kenya, I was captivated by the potential of technology to connect people and solve complex problems. This early interest blossomed into a lifelong passion, driving me to pursue a career in IT.</p>
-                        <p>Throughout my journey, I've been motivated by the belief that technology can be a powerful force for positive change. Whether it's securing networks to protect sensitive information or developing web applications that streamline processes, I find immense satisfaction in creating solutions that make a tangible difference in people's lives.</p>
-                        <p>My diverse background, speaking English, Swahili, and Kipsigis, has given me a unique perspective on the importance of clear communication in the tech world. It's reinforced my commitment to creating user-friendly interfaces and explaining complex technical concepts in accessible ways.</p>
-                        <p>One of my proudest achievements was implementing a new network security protocol during my internship at the Public Service Commission. Seeing how this improved the organization's data protection firsthand reaffirmed my passion for cybersecurity and its critical role in our increasingly digital world.</p>
-                    </div>
-                </div>
-                
-                <!-- My Expertise card -->
-                <div class="card shadow-sm mb-4">
-                    <div class="card-body">
-                        <h3 class="section-title">My Expertise</h3>
-                        <ul class="list-unstyled">
-                            <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Front-end Development (HTML, CSS, JavaScript, Bootstrap)</li>
-                            <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Back-end Development (Python, Django, JavaScript)</li>
-                            <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Network Management and Security</li>
-                            <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> IT Technical Support</li>
-                            <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Database Management</li>
-                            <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Cloud Computing (AWS, Azure)</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="row mt-5">
-            <!-- Professional Experience and Education section -->
-            <div class="col-md-6">
-                <h3 class="text-center mb-4 section-title">Professional Experience</h3>
-                <div class="timeline">
-                    <div class="row">
-                        <div class="col-auto text-center flex-column d-none d-sm-flex">
-                            <div class="row h-50">
-                                <div class="col">&nbsp;</div>
-                                <div class="col">&nbsp;</div>
-                            </div>
-                            <h5 class="m-2">
-                                <span class="badge rounded-pill bg-primary">&nbsp;</span>
-                            </h5>
-                            <div class="row h-50">
-                                <div class="col border-end">&nbsp;</div>
-                                <div class="col">&nbsp;</div>
-                            </div>
-                        </div>
-                        <div class="col py-2">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h4 class="card-title">ICT Intern - Public Service Commission</h4>
-                                    <p class="text-muted"><i class="fas fa-clock"></i> April 2022 - December 2022</p>
-                                    <ul>
-                                        <li>Implemented new network security protocols</li>
-                                        <li>Developed and maintained internal web portal</li>
-                                        <li>Provided technical support to over 100 employees</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-auto text-center flex-column d-none d-sm-flex">
-                            <div class="row h-50">
-                                <div class="col border-end">&nbsp;</div>
-                                <div class="col">&nbsp;</div>
-                            </div>
-                            <h5 class="m-2">
-                                <span class="badge rounded-pill bg-success">&nbsp;</span>
-                            </h5>
-                            <div class="row h-50">
-                                <div class="col border-end">&nbsp;</div>
-                                <div class="col">&nbsp;</div>
-                            </div>
-                        </div>
-                        <div class="col py-2">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h4 class="card-title">ICT Intern - ICT Authority</h4>
-                                    <p class="text-muted"><i class="fas fa-clock"></i> December 2022 - December 2023</p>
-                                    <ul>
-                                        <li>Assisted in network infrastructure upgrades</li>
-                                        <li>Developed security documentation</li>
-                                        <li>Provided system administration support</li>
-                                    </ul>
-                                </div>
-                            </div>
+                    <div class="col-lg-7">
+                        <div class="card-elevated bg-card p-4 h-100">
+                            <h2 class="h4">Background</h2>
+                            <p class="text-muted-2">BSc in Information Technology from Zetech University. Hands-on experience across web development, network administration, and cloud security.</p>
+                            <h3 class="h5 mt-4">Highlights</h3>
+                            <ul class="text-muted-2 mb-0">
+                                <li>Designed secure network topologies and automated monitoring</li>
+                                <li>Developed responsive web apps with accessible UI patterns</li>
+                                <li>Implemented CI-friendly workflows and documentation</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
-            
-            <div class="col-md-6">
-                <h3 class="text-center mb-4 section-title">Education</h3>
-                <div class="timeline">
-                    <div class="row">
-                        <div class="col-auto text-center flex-column d-none d-sm-flex">
-                            <div class="row h-50">
-                                <div class="col">&nbsp;</div>
-                                <div class="col">&nbsp;</div>
-                            </div>
-                            <h5 class="m-2">
-                                <span class="badge rounded-pill bg-primary">&nbsp;</span>
-                            </h5>
-                            <div class="row h-50">
-                                <div class="col border-end">&nbsp;</div>
-                                <div class="col">&nbsp;</div>
-                            </div>
-                        </div>
-                        <div class="col py-2">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h4 class="card-title">BSc in Information Technology</h4>
-                                    <p class="text-muted"><i class="fas fa-clock"></i> 2016-2020</p>
-                                    <p>Zetech University, Ruiru, Kenya</p>
-                                    <p>Second Class Honours (Upper Division)</p>
-                                </div>
+        </section>
+
+        <section class="section">
+            <div class="container-narrow">
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="card-elevated bg-card p-4 h-100">
+                            <h2 class="h5 mb-3">Core Skills</h2>
+                            <div class="d-flex gap-2 flex-wrap">
+                                <span class="badge rounded-pill skill-tag">HTML/CSS</span>
+                                <span class="badge rounded-pill skill-tag">JavaScript</span>
+                                <span class="badge rounded-pill skill-tag">Python</span>
+                                <span class="badge rounded-pill skill-tag">Networking</span>
+                                <span class="badge rounded-pill skill-tag">Security</span>
+                                <span class="badge rounded-pill skill-tag">Cloud</span>
                             </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-auto text-center flex-column d-none d-sm-flex">
-                            <div class="row h-50">
-                                <div class="col border-end">&nbsp;</div>
-                                <div class="col">&nbsp;</div>
-                            </div>
-                            <h5 class="m-2">
-                                <span class="badge rounded-pill bg-primary">&nbsp;</span>
-                            </h5>
-                            <div class="row h-50">
-                                <div class="col border-end">&nbsp;</div>
-                                <div class="col">&nbsp;</div>
-                            </div>
-                        </div>
-                        <div class="col py-2">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h4 class="card-title">Kenya Certificate of Secondary Education</h4>
-                                    <p class="text-muted"><i class="fas fa-clock"></i> 2012-2015</p>
-                                    <p>Kapkatet Secondary School, Kericho, Kenya</p>
-                                </div>
-                            </div>
+                    <div class="col-md-6">
+                        <div class="card-elevated bg-card p-4 h-100">
+                            <h2 class="h5 mb-3">Certifications</h2>
+                            <ul class="text-muted-2 mb-0">
+                                <li>Cisco CCNA</li>
+                                <li>AWS Certified Solutions Architect</li>
+                                <li>CISSP (in progress)</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        
-        <div class="row mt-5">
-            <!-- Awards & Recognitions section -->
-            <div class="col-md-6">
-                <div class="card shadow-sm">
-                    <div class="card-body">
-                        <h3 class="text-center mb-4">Awards & Recognitions</h3>
-                        <div class="row justify-content-center">
-                            <div class="col-md-6 mb-3 text-center">
-                                <i class="fas fa-award fa-3x mb-3 text-primary"></i>
-                                <h5>Best IT Support Technician 2023</h5>
-                                <p class="text-muted">Tech Association of Kenya</p>
-                            </div>
-                            <div class="col-md-6 mb-3 text-center">
-                                <i class="fas fa-trophy fa-3x mb-3 text-primary"></i>
-                                <h5>Top Web Developer 2022</h5>
-                                <p class="text-muted">Zetech University</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Testimonials section -->
-            <div class="col-md-6">
-                <div class="card shadow-sm">
-                    <div class="card-body">
-                        <h3 class="text-center mb-4">Testimonials</h3>
-                        <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
-                                    <blockquote class="blockquote text-center">
-                                        <p class="mb-0">"Gideon is a highly skilled and reliable IT professional."</p>
-                                        <footer class="blockquote-footer mt-2">John Doe, Tech Solutions Ltd</footer>
-                                    </blockquote>
-                                </div>
-                                <div class="carousel-item">
-                                    <blockquote class="blockquote text-center">
-                                        <p class="mb-0">"His expertise in network security is exceptional."</p>
-                                        <footer class="blockquote-footer mt-2">Jane Smith, Secure Networks</footer>
-                                    </blockquote>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        </section>
     </main>
 
-    <footer class="footer py-5 bg-dark text-white">
-        <div class="container">
-            <div class="row gy-4">
-                <div class="col-lg-4 col-md-6">
-                    <h5 class="mb-3">Gideon K. Ngetich</h5>
-                    <p class="small mb-0">IT Professional | Web Developer | Network Security Specialist</p>
+    <footer class="site-footer py-5">
+        <div class="container-wide">
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6">
+                    <div class="text-muted-2">© <span id="y"></span> Gideon K. Ngetich</div>
                 </div>
-                <div class="col-lg-2 col-md-6">
-                    <h5 class="mb-3">Quick Links</h5>
-                    <ul class="list-unstyled">
-                        <li class="mb-2"><a href="index.html" class="text-white">Home</a></li>
-                        <li class="mb-2"><a href="about.html" class="text-white">About</a></li>
-                        <li class="mb-2"><a href="contact.html" class="text-white">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <h5 class="mb-3">Connect</h5>
-                    <div class="social-links">
-                        <a href="#" class="text-white me-3"><i class="fab fa-linkedin fa-lg"></i></a>
-                        <a href="https://github.com/Gideon-Kipngeno" class="text-white me-3"><i class="fab fa-github fa-lg"></i></a>
-                        <a href="https://x.com/Gideon_K_N" class="text-white me-3"><i class="fab fa-twitter fa-lg"></i></a>
-                        <a href="mailto:giddykipngeno5@gmail.com" class="text-white"><i class="fas fa-envelope fa-lg"></i></a>
-                    </div>
-                </div>
-            </div>
-            <div class="row mt-4">
-                <div class="col-12">
-                    <hr class="bg-light">
-                    <p class="small text-center mb-0">
-                        &copy; <span id="currentYear"></span> Gideon K. Ngetich. All rights reserved.
-                    </p>
+                <div class="col-md-6 text-md-end">
+                    <a class="me-3" href="https://github.com/Gideon-Kipngeno" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                    <a class="me-3" href="https://x.com/Gideon_K_N" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+                    <a class="me-3" href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="mailto:giddykipngeno5@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Set current year in footer
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-        
-        // Initialize carousel
-        var testimonialCarousel = new bootstrap.Carousel(document.getElementById('testimonialCarousel'), {
-            interval: 5000,
-            wrap: true
-        });
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
 </body>
 </html>
