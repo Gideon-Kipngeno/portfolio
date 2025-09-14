@@ -485,6 +485,33 @@
             height: 3px;
             background-color: #007bff;
         }
+        /* Accessibility enhancements */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #1a1e21;
+            color: #ffffff;
+            padding: 8px 16px;
+            z-index: 1000;
+            transition: top 0.2s ease;
+        }
+        .skip-link:focus {
+            top: 10px;
+            outline: 2px solid #ffd700;
+        }
+        :focus-visible {
+            outline: 3px solid #ffd700;
+            outline-offset: 2px;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+        }
                 /* Footer styles */
                 .footer {
             background-color: #1a1e21;
